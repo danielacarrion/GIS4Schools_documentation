@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.1. Copernicus EMS and crisis maps production &mdash; GIS4Schools  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Credits" href="../credits.html" />
+    <link rel="prev" title="4. Geospatial Data Processing for crisis mapping and Copernicus EMS Services" href="part4.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #55a1c9" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/G4S-p1-hor.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../part1/part1.html">1. Data visualization with QGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_1.html">1.1. Introduction to GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_2.html">1.2. Coordinate reference Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_2.html#projections">1.2.1. Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_2.html#epsg">1.2.2. EPSG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_3.html">1.3. GIS data modelling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_3.html#raster-data">1.3.1. Raster data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_3.html#vector-data">1.3.2. Vector data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_4.html">1.4. GeoPackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_5.html">1.5. Introduction to QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_6.html">1.6. QGIS interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_7.html">1.7. Managing GeoPackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_8.html">1.8. QGIS visualization for vectors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_8.html#single-symbol-style">1.8.1. Single symbol style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_8.html#categorized-style">1.8.2. Categorized style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_8.html#feature-labels">1.8.3. Feature labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_8.html#graduated-style">1.8.4. Graduated style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_8.html#saving-and-loading-style">1.8.5. Saving and loading style</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_9.html">1.9. QGIS visualization for rasters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_9.html#singleband-gray">1.9.1. Singleband gray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_9.html#singleband-pseudocolor">1.9.2. Singleband-pseudocolor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part1/1_9.html#paletted-unique-values">1.9.3. Paletted/unique values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_10.html">1.10. Printing maps with QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/1_11.html">1.11. Atlases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/part2.html">2. GIS and Analysis Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_1.html">2.1. Introduction to Geospatial Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_2.html">2.2. Accessing OGC services with QGIS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_2.html#wms-wmts">2.2.1. WMS/WMTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_2.html#wfs">2.2.2. WFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_2.html#wcs">2.2.3. WCS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_3.html">2.3. Extending QGIS functionalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_3.html#id1">2.3.1. Processing toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_3.html#id3">2.3.2. Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_4.html">2.4. Vector processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#map-digitizing">2.4.1. Map digitizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#attribute-table-selection-editing-and-field-calculator">2.4.2. Attribute table: selection, editing and field calculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#join">2.4.3. Join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#geoprocessing-tools-for-vector-data-dissolve">2.4.4. Geoprocessing tools for vector data: dissolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#geoprocessing-tools-for-vector-data-intersection">2.4.5. Geoprocessing tools for vector data: intersection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#geoprocessing-tools-for-vector-data-buffer">2.4.6. Geoprocessing tools for vector data: buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_4.html#rasterization">2.4.7. Rasterization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_5.html">2.5. Raster processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#reprojection">2.5.1. Reprojection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#removing-nodata">2.5.2. Removing NoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#raster-calculator">2.5.3. Raster calculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#vectorization">2.5.4. Vectorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#clip-raster-with-a-mask-clip-raster-by-extent">2.5.5. Clip raster with a mask, clip raster by extent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/2_5.html#overlay-statistics">2.5.6. Overlay statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/2_6.html">2.6. Graphical modeler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/part3.html">3. Part 3</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="part4.html">4. Geospatial Data Processing for crisis mapping and Copernicus EMS Services</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Copernicus EMS and crisis maps production</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copernicus-ems-on-demand-mapping">4.1.1. Copernicus EMS on demand mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1.2. Copernicus EMS on demand mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crisis-maps-production">4.1.3. Crisis maps production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crisis-maps-for-earthquakes">4.1.4. Crisis maps for Earthquakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crisis-maps-for-fires">4.1.5. Crisis maps for Fires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crisis-maps-for-floods">4.1.6. Crisis maps for Floods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crisis-maps-validation">4.1.7. Crisis maps validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#early-warning-and-monitoring-services">4.1.8. Early warning and monitoring services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#european-flood-awareness-systems-efas-and-global-flood-awareness-systems-glofas">4.1.9. European Flood Awareness Systems (EFAS) and Global Flood Awareness Systems (GloFAS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#european-forest-fire-information-system-effis-and-global-wildfire-information-system-gwis">4.1.10. European Forest Fire Information System (EFFIS) and Global Wildfire Information System (GWIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#european-drought-observatory-edo-and-global-drought-observatory-gdo">4.1.11. European Drought Observatory (EDO) and Global Drought Observatory (GDO)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+<a href="credits.html">Credits</a>
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GIS4Schools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="part4.html"><span class="section-number">4. </span>Geospatial Data Processing for crisis mapping and Copernicus EMS Services</a> &raquo;</li>
+        
+      <li><span class="section-number">4.1. </span>Copernicus EMS and crisis maps production</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/part4/4_1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="copernicus-ems-and-crisis-maps-production">
+<h1><span class="section-number">4.1. </span>Copernicus EMS and crisis maps production<a class="headerlink" href="#copernicus-ems-and-crisis-maps-production" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="copernicus-ems-on-demand-mapping">
+<h2><span class="section-number">4.1.1. </span>Copernicus EMS on demand mapping<a class="headerlink" href="#copernicus-ems-on-demand-mapping" title="Permalink to this headline">¶</a></h2>
+<p>Copernicus Emergency Management Service (EMS) is part of the huge Copernicus programme (<a class="reference external" href="https://www.copernicus.eu/" rel="noopener noreferrer" target="_blank">https://www.copernicus.eu/</a>), which is dedicated to mapping, early warning and monitoring of emergencies and which has already been introduced in 3.3.4.6 <strong>TODO LINK</strong>. In this chapter, we are going to discuss the different components of the service (<a class="reference internal" href="#id1"><span class="std std-numref">Fig. 4.1.1.1</span></a>), as well as which are the technologies and the methods which allow to obtain maps that can support emergency management.</p>
+<div class="figure align-default" id="id35">
+<span id="id1"></span><img alt="../_images/4.1.1.1.png" src="../_images/4.1.1.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.1.1 </span><span class="caption-text">– The Copernicus EMS components, which include on demand mapping, Early Warning and Monitoring. Source: <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/</a></span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">4.1.2. </span>Copernicus EMS on demand mapping<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>The Copernicus EMS on demand mapping service is meant to be activated after the occurrence of a crisis event (and in some cases before, to support preparedness) in order to provide the stakeholders, who take care of the operations during and after the emergency, valuable maps which can support the activities planning. The map production can be requested to the Service by Authorised users (e.g. National Civil Protection or international humanitarian organizations). The following two typologies of maps are provided:</p>
+<ul class="simple">
+<li><strong>Rapid maps</strong> which are meant to be delivered shortly (few hours or days) after the occurrence of a disaster in order to provide information about the impact over the area of interest. Depending on the type of disaster and on the users’ request, rapid maps can show the delineation of the affected area (e.g. the perimeter of the flooded area) or the grading of the damage (if buildings are destroyed, heavily damaged or slightly damaged).</li>
+<li><strong>Risk Recovery Maps</strong> can contribute to prevention, preparedness, disaster risk reduction and recovery phases of emergency management and their production does not imply immediate response.</li>
+</ul>
+<p>These maps are produced taking advantage of available layers and sources of information and mainly rely on satellite imagery in order to show the impacts of the disaster. The image processing exploits, when possible, semi-automatic procedures (e.g. spectral indices thresholding), however visual interpretation and the experience of the operator play the most important role.</p>
+<p><a class="reference internal" href="#id3"><span class="std std-numref">Fig. 4.1.2.1</span></a> shows the schema of the activities that are needed to allow the production of the on demand maps. First of all, the Service is activated by authorised users, through the Emergency Response Coordination Centre (ERCC, <a class="reference external" href="https://ec.europa.eu/echo/what/civil-protection/emergency-response-coordination-centre-ercc_en" rel="noopener noreferrer" target="_blank">https://ec.europa.eu/echo/what/civil-protection/emergency-response-coordination-centre-ercc_en</a>) and the Joint Research Centre DG (JRC, <a class="reference external" href="https://ec.europa.eu/jrc/en" rel="noopener noreferrer" target="_blank">https://ec.europa.eu/jrc/en</a>).</p>
+<div class="figure align-default" id="id36">
+<span id="id3"></span><img alt="../_images/4.1.2.1.png" src="../_images/4.1.2.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.1 </span><span class="caption-text">– The Copernicus on demand mapping activities workflow. Source: <a class="reference external" href="https://spacedata.copernicus.eu/copernicus-users/user-categories/copernicus-services/emergency/ems-service-workflow" rel="noopener noreferrer" target="_blank">https://spacedata.copernicus.eu/copernicus-users/user-categories/copernicus-services/emergency/ems-service-workflow</a></span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>Then, depending on the typologies of maps to be produced and on the type of disaster, the satellite image acquisition is triggered. At this point, it is necessary to wait for the availability of a suitable satellite image and, in the meantime, it is possible to collect other layers that can be useful for mapping (such as topographic maps, ancillary information, pre-event data). Many satellite constellations, can be considered for imagery acquisition, including the Sentinels (see 3.1.3.2 <strong>TODO LINK</strong>). This is the phase of the process which takes the longest amount of time and it is critical in the case of rapid mapping, requiring from few hours to few days.</p>
+<p>The maps produced by Copernicus EMS are openly and freely available through the website (<a class="reference internal" href="#id4"><span class="std std-numref">Fig. 4.1.2.2</span></a>), the most recent ones can be accessed through a map, as well as the full list of activations can be accessed and queried.</p>
+<div class="figure align-default" id="id37">
+<span id="id4"></span><img alt="../_images/4.1.2.2.png" src="../_images/4.1.2.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.2 </span><span class="caption-text">– The map interface to access the Copernicus EMS activations. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/#zoom=2&amp;lat=13.54457&amp;lon=27.49718&amp;layers=00B0T" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/#zoom=2&amp;lat=13.54457&amp;lon=27.49718&amp;layers=00B0T</a></span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>Maps are provided both in printable versions (often with different resolutions in order to be able to be downloaded even when the internet connection conditions are not favourable) and in vector format (<a class="reference internal" href="#id5"><span class="std std-numref">Fig. 4.1.2.3</span></a>).</p>
+<div class="figure align-default" id="id38">
+<span id="id5"></span><img alt="../_images/4.1.2.3.png" src="../_images/4.1.2.3.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.3 </span><span class="caption-text">– Example of rapid map downloadable both in printable (A) and vector (B) formats. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/list-of-components/EMSR501" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/list-of-components/EMSR501</a></span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+<p>Printable maps (<a class="reference internal" href="#id6"><span class="std std-numref">Fig. 4.1.2.4</span></a>) are mainly designed to be used during the emergency by the operators managing the activities in the field, so they can e.g. discuss around a table (or in the field, <a class="reference internal" href="#id7"><span class="std std-numref">Fig. 4.1.2.5</span></a>) watching the map showing the affected area and elements of interest, such as roads, open areas which could be suitable to put tents and vehicles for the logistics, key buildings, like schools or hospitals. The vector files of the damage assessment can be overlayed to other layers in a GIS software in order to be able to make more complex analyses and exploit other layers that the local administrations or organisations could have.</p>
+<div class="figure align-default" id="id39">
+<span id="id6"></span><img alt="../_images/4.1.2.4.png" src="../_images/4.1.2.4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.4 </span><span class="caption-text">– Example of rapid map for a flood event in printable format. Source : <a class="reference external" href="https://emergency.copernicus.eu/mapping/system/files/components/EMSR501_AOI01_DEL_MONIT02_r1_RTP01_v1.jpg" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/system/files/components/EMSR501_AOI01_DEL_MONIT02_r1_RTP01_v1.jpg</a></span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id40">
+<span id="id7"></span><img alt="../_images/4.1.2.5.png" src="../_images/4.1.2.5.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.5 </span><span class="caption-text">– Example of use of maps in the field. Source: <a class="reference external" href="https://earthobservations.org/geo_blog_obs.php?id=455" rel="noopener noreferrer" target="_blank">https://earthobservations.org/geo_blog_obs.php?id=455</a></span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the following, the different typologies of crisis maps provided by Copernicus EMS are listed and discussed.</p>
+<p><strong>Reference products</strong> (<a class="reference internal" href="#id8"><span class="std std-numref">Fig. 4.1.2.6</span></a>) provide knowledge of the territory prior to the emergency. The contents of the products include topographic features describing the area of interest. It targets the exposed properties and other helpful information that can assist the stakeholders during the management of the emergency.</p>
+<div class="figure align-default" id="id41">
+<span id="id8"></span><img alt="../_images/4.1.2.6.png" src="../_images/4.1.2.6.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.6 </span><span class="caption-text">– Example of reference map. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/system/files/components/EMSR272_05KUTUPALONG_00REFERENCE_MAP_v2_200dpi.jpg" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/system/files/components/EMSR272_05KUTUPALONG_00REFERENCE_MAP_v2_200dpi.jpg</a></span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>First Estimate Product</strong> (FEP, <a class="reference internal" href="#id9"><span class="std std-numref">Fig. 4.1.2.7</span></a>) provide a very fast, but not very detailed, early assessment of the affected locations within the AOI (Area Of Interest). The assessment is derived from the first  available post-event imagery. This product can be used to provide a first estimate of the affected area and to better define the requirements for the following more detailed products.</p>
+<div class="figure align-default" id="id42">
+<span id="id9"></span><img alt="../_images/4.1.2.7.png" src="../_images/4.1.2.7.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.7 </span><span class="caption-text">– Example of first estimate product. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/ems-product-component/EMSR482_AOI07_FEP_PRODUCT_r1_VECTORS/1" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/ems-product-component/EMSR482_AOI07_FEP_PRODUCT_r1_VECTORS/1</a></span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Delineation products</strong> (<a class="reference internal" href="#id10"><span class="std std-numref">Fig. 4.1.2.8</span></a>) describe the impact of the event over the area of interest, showing the affected area and the affected assets, without providing a measure of the level of damage.</p>
+<div class="figure align-default" id="id43">
+<span id="id10"></span><img alt="../_images/4.1.2.8.png" src="../_images/4.1.2.8.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.8 </span><span class="caption-text">– Example of delineation product. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/system/files/components/EMSR500_AOI01_DEL_MONIT01_r1_RTP01_v1.jpg" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/system/files/components/EMSR500_AOI01_DEL_MONIT01_r1_RTP01_v1.jpg</a></span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Grading products</strong> (<a class="reference internal" href="#id11"><span class="std std-numref">Fig. 4.1.2.9</span></a>) provide information on the level of severity of the damage, its spatial distribution and extent. These products are derived from post-event satellite imagery and include the level, magnitude or damage grades concerning a specific disaster type. If possible, the products publish relevant and up-to-date information specific to the affected area, such as settlements, transport networks, industries, and others.</p>
+<div class="figure align-default" id="id44">
+<span id="id11"></span><img alt="../_images/4.1.2.9.png" src="../_images/4.1.2.9.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.2.9 </span><span class="caption-text">– Example of grading product. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/system/files/components/EMSR500_AOI01_GRA_PRODUCT_r1_RTP01_v1.jpg" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/system/files/components/EMSR500_AOI01_GRA_PRODUCT_r1_RTP01_v1.jpg</a></span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-supplementary-info admonition">
+<p class="first admonition-title">Supplementary info</p>
+<p class="last">For more  information about the products, refer to the Products Portfolio <a class="reference external" href="https://emergency.copernicus.eu/mapping/ems/rapid-mapping-portfolio" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/ems/rapid-mapping-portfolio</a> or refer to the <a class="reference external" href="https://emergency.copernicus.eu/mapping/sites/default/files/files/JRCTechnicalReport_2020_Manual%20for%20Rapid%20Mapping%20Products_final.pdf" rel="noopener noreferrer" target="_blank">technical manual for the Copernicus EMS – Rapid Mapping Products</a></p>
+</div>
+</div>
+<div class="section" id="crisis-maps-production">
+<h2><span class="section-number">4.1.3. </span>Crisis maps production<a class="headerlink" href="#crisis-maps-production" title="Permalink to this headline">¶</a></h2>
+<p>Crisis maps are mainly produced from semi-automatic processing of satellite images and visual interpretation. Provided the importance of delivering a reliable map to the operators in the field, the visual interpretation is very important as well as the experience of the map provider in order to contain as much as possible the limitations of the automatic processing. In addition, not all kinds of damages are visible from the satellites, due to the limited spatial resolution and to the typology of the acquisition, which allows to observe from a certain perspective only, e.g. on a satellite it is possible to see only the roof of buildings.</p>
+<p>In general, in order to single out the damage, pre and post imagery of the area of interest should be compared (<a class="reference internal" href="#id12"><span class="std std-numref">Fig. 4.1.3.1</span></a>). In this way, the map provider can infer from the differences between pre and post situation the effects of the disaster. In some cases the change detection analysis can be performed with the help of semi-automatic procedures. As already anticipated, in most cases, visual interpretation plays a crucial role. In order to ease the comparison between pre and post situation, the pre and post images should be as much similar as possible, i.e. acquired with the same sensor, possibly in very similar conditions. If possible, pre and post images should be close in time, one acquired immediately before and the other one immediately after the event. This is not always easy to obtain, due to the period when a certain satellite passes over the area of interest or to the possible poor quality of the imagery, e.g. due to the possible presence of clouds. For this reason, the choice of the satellite to be triggered for image acquisition when a disaster must be mapped is a critical point.</p>
+<div class="figure align-default" id="id45">
+<span id="id12"></span><img alt="../_images/4.1.3.1.png" src="../_images/4.1.3.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.3.1 </span><span class="caption-text">– Example of pre and post satellite imagery. Images of Khao Lak in Thailand before and after the 26 December 2004 Indian Ocean tsunami. (a) Pre-event Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) image (15 November 2002). (b) Post-event ASTER image (31 December 2004). Source: Koshimura, Shunichi; Moya, Luis; Mas, Erick; Bai, Yanbing. 2020. “Tsunami Damage Detection with Remote Sensing: A Review” Geosciences 10, no. 5: 177. <a class="reference external" href="https://doi.org/10.3390/geosciences10050177" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/geosciences10050177</a></span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the following section, the different types of disasters are discussed to explain which types of images are suitable and which types of processing can be performed in order to produce the crisis maps.</p>
+</div>
+<div class="section" id="crisis-maps-for-earthquakes">
+<h2><span class="section-number">4.1.4. </span>Crisis maps for Earthquakes<a class="headerlink" href="#crisis-maps-for-earthquakes" title="Permalink to this headline">¶</a></h2>
+<p>After an earthquake, the effects that can be mapped are: damaged or destroyed buildings, damages occurred to the road network, e.g. damaged roads, roads covered in rubble or debris, landslides, avalanches, etc. The most used method to assess the damages is visual interpretation on VHR (Very High Resolution) satellite images. In particular pre and post event images should be available and the comparison between the two helps the mapper to understand which structures have been affected (<a class="reference internal" href="#id13"><span class="std std-numref">Fig. 4.1.4.1</span></a>). The damage on the crisis map can be displayed in different ways, e.g. with points or polygons defining with different colours the level of damage of the corresponding buildings.</p>
+<div class="figure align-default" id="id46">
+<span id="id13"></span><img alt="../_images/4.1.4.1.png" src="../_images/4.1.4.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.4.1 </span><span class="caption-text">– Example of pre (left) and post (right) imagery of damages after an Earthquake. Source: Caribbean Handbook on Risk Management, <a class="reference external" href="http://www.charim.net/use/94" rel="noopener noreferrer" target="_blank">http://www.charim.net/use/94</a></span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</div>
+<p>The highest the resolution of the available imagery, the best it is for the photointerpreter, because in many cases it is difficult to be able to correctly point out the damages and, increasing the resolution, the level of visible details increases as well. When possible, it is preferred to have aerial images, which can have even higher resolution (<a class="reference internal" href="#id14"><span class="std std-numref">Fig. 4.1.4.2</span></a>).</p>
+<div class="figure align-default" id="id47">
+<span id="id14"></span><img alt="../_images/4.1.4.2.png" src="../_images/4.1.4.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.4.2 </span><span class="caption-text">– Example of damage assessment after an Earthquake, based on aerial imagery. NOTE: this map is based on aerial images and not on satellite ones, that’s why it is possible to see the details so well. Accumoli is an old village in central Italy, with small and old buildings that could be assessed with difficulty on a lower resolution image. <a class="reference external" href="https://emergency.copernicus.eu/mapping/system/files/components/EMSR177_25ACCUMOLIAERIAL_GRADING_OVERVIEW_v3_200dpi.jpg" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/system/files/components/EMSR177_25ACCUMOLIAERIAL_GRADING_OVERVIEW_v3_200dpi.jpg</a></span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+</div>
+<p>As already anticipated, the possibility to see only the roof top of buildings is a strong limitation for damage assessment after an earthquake, because there are severe damages that can be visible only on the walls. One extreme case, showing the limitations of the top view is the “pancake effect” or also soft storey which can unfortunately occur and which consists in the collapse of one floor of the building, without the complete collapse of the building (<a class="reference internal" href="#id15"><span class="std std-numref">Fig. 4.1.4.3</span></a>).</p>
+<div class="figure align-default" id="id48">
+<span id="id15"></span><img alt="../_images/4.1.4.3.png" src="../_images/4.1.4.3.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.4.3 </span><span class="caption-text">– Example of “soft storey”, corresponding to collapse of one floor of a building. Source: Teruna, Daniel &amp; Majid, Taksiah &amp; Budiono, Bambang. (2014).</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</div>
+<p>Of course, in case of pancake or soft storey effect, the building cannot be retrofitted and must be demolished, in practice it should be labelled as “destroyed” even if the top of the building seems to be intact. Usually, crisis maps show a disclaimer, which specifies that the maps show only the damages that could be assessed on the available imagery, therefore, the map has limitations that cannot be overcome. Despite the crisis maps limitations, the feedback of the users is very positive: these maps are useful as a support during the emergency activities. In order to be able to single out these types of damages and to be able to see at least the damage visible on the external walls of buildings, it would be necessary to have access to oblique images, i.e. images that are acquired not with nadir view, but with 45° angle view (<a class="reference internal" href="#id16"><span class="std std-numref">Fig. 4.1.4.4</span></a>). These types of images can be acquired by aerial instruments or UAV (Unmanned Aerial Vehicles) and cannot be often available.</p>
+<div class="figure align-default" id="id49">
+<span id="id16"></span><img alt="../_images/4.1.4.4.png" src="../_images/4.1.4.4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.4.4 </span><span class="caption-text">– Examples of oblique images, acquired with UAV, showing damaged and destroyed buildings. Source: Zhang, Rui; Li, Heng; Duan, Kaifeng; You, Shucheng; Liu, Ke; Wang, Futao; Hu, Yong. 2020. “Automatic Detection of Earthquake-Damaged Buildings by Integrating UAV Oblique Photography and Infrared Thermal Imaging” Remote Sens. 12, no. 16: 2621. <a class="reference external" href="https://doi.org/10.3390/rs12162621" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs12162621</a></span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="crisis-maps-for-fires">
+<h2><span class="section-number">4.1.5. </span>Crisis maps for Fires<a class="headerlink" href="#crisis-maps-for-fires" title="Permalink to this headline">¶</a></h2>
+<p>As it has been discussed in the section dedicated to Remote Sensing, vegetation can be detected with optical satellite imagery (3.2.2.2 <strong>TODO LINK</strong>). Healthy and dead vegetation have very different spectral signatures, due to the response of vegetation in particular in green and Near InfraRed (NIR) bands. In order to detect the extension of the burnt area after a fire event, different techniques can be considered, such as exploiting spectral indices, like the NDVI (Normalised Difference Vegetation Index, <a class="reference internal" href="#id17"><span class="std std-numref">Fig. 4.1.5.1</span></a>), or supervised and unsupervised classification (3.2.3.2). As anticipated, the experience of the mapper is crucial, e.g. to correctly set a threshold for the NDVI to discriminate between burnt and not burnt areas or to select the training sets for the classification algorithm to detect healthy vegetation and burnt areas. To perform these steps, visual interpretation is crucial.</p>
+<div class="figure align-default" id="id50">
+<span id="id17"></span><img alt="../_images/4.1.5.1.png" src="../_images/4.1.5.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.5.1 </span><span class="caption-text">– Example of global map of NDVI Source: <a class="reference external" href="https://www.star.nesdis.noaa.gov/smcd/emb/vci/VH/modis_browse16daysNDVI.php" rel="noopener noreferrer" target="_blank">https://www.star.nesdis.noaa.gov/smcd/emb/vci/VH/modis_browse16daysNDVI.php</a></span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+</div>
+<p>Fires evolve and spread fast, so, unless the fire has already extinguished, the monitoring of its expansion could be needed. Consider that fires can produce a lot of smoke, which could affect the visibility during the fire event. However, in majority of cases, during the satellite image triggering and acquisition, the fire could have stopped spreading, so, unless there are clouds, the burnt area should be visible on the satellite image. An advantage when detecting fires is represented by the fact that the burnt scar stays for some time as it is, until new vegetation grows, so even a satellite image acquisition which follows the fire of some days can be suitable.</p>
+<p><a class="reference internal" href="#id18"><span class="std std-numref">Fig. 4.1.5.2</span></a> shows InfraRed False Colour images (3.3.1.2) pre and post a fire event. As it is known, in this representation the red colour represent healthy vegetation, while where the red colour has disappeared in the post event image, the burnt scar is present.</p>
+<div class="figure align-default" id="id51">
+<span id="id18"></span><img alt="../_images/4.1.5.2.png" src="../_images/4.1.5.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.5.2 </span><span class="caption-text">– Example of satellite images displayed in infrared false colour (3.3.1.2) pre and post a fire event. Source: Liu, Meng; Popescu, Sorin; Malambo, Lonesome. 2020. “Feasibility of Burned Area Mapping Based on ICESAT−2 Photon Counting Data” Remote Sens. 12, no. 1: 24. <a class="reference external" href="https://doi.org/10.3390/rs12010024" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs12010024</a>. Satellite images visualized as false color composites (Near Infrared-Red-Green): (a) pre-fire Sentinel−2 image on July 12, 2018, (b) post-fire Sentinel−2 image on October 15, 2018, in northern California.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+</div>
+<p>The delimitation of the burnt scar can be done with semi-automatic procedures (e.g. exploiting the NDVI and/or image classification) or manually digitizing after photointerpretation, in order to produce the crisis map (see an example of crisis map for a fire event in <a class="reference internal" href="#id19"><span class="std std-numref">Fig. 4.1.5.3</span></a>). The NDVI can be exploited to discriminate between healthy vegetation and burnt areas, singling out a threshold between the two, again, thanks to visual interpretation and the experience of the operator.</p>
+<div class="figure align-default" id="id52">
+<span id="id19"></span><img alt="../_images/4.1.5.3.png" src="../_images/4.1.5.3.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.5.3 </span><span class="caption-text">– Example of crisis map for a fire event. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/ems-product-component/EMSR213_01VESUVIO_02GRADING_MONIT01/2" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/ems-product-component/EMSR213_01VESUVIO_02GRADING_MONIT01/2</a></span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="crisis-maps-for-floods">
+<h2><span class="section-number">4.1.6. </span>Crisis maps for Floods<a class="headerlink" href="#crisis-maps-for-floods" title="Permalink to this headline">¶</a></h2>
+<p>In case of flood events, usually the main aim of a crisis map is to delineate the flooded area, i.e. the presence of water in places where it is not normally present. In fact, when producing a crisis map for a flood event, the areas which are normally covered in water (e.g. river beds or lakes) should not be included in the flood extent, but should be marked in a different way (<a class="reference internal" href="#id20"><span class="std std-numref">Fig. 4.1.6.1</span></a>).</p>
+<div class="figure align-default" id="id53">
+<span id="id20"></span><img alt="../_images/4.1.6.1.png" src="../_images/4.1.6.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.1 </span><span class="caption-text">– Example of map showing permanent waters and flood extent. Source: Olthof, Ian. 2017. “Mapping Seasonal Inundation Frequency (1985–2016) along the St-John River, New Brunswick, Canada using the Landsat Archive” Remote Sens. 9, no. 2: 143. <a class="reference external" href="https://doi.org/10.3390/rs9020143" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs9020143</a></span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+</div>
+<p>Flood can come also with other types of damages, in particular, if the flood is due to a typhoon, a very heavy storm or a tsunami, also buildings and other types of structures could be affected. In that case, in order to detect also those types of damages, the same principles described for earthquakes should be applied.</p>
+<p>In this section, we are going to discuss how to detect the water presence and, consequently, the flooded area on a satellite image.</p>
+<div class="admonition-sar-synthetic-aperture-radar-and-flood-mapping admonition">
+<p class="first admonition-title">SAR (Synthetic Aperture Radar) and flood mapping</p>
+<p class="last">Often, flooded areas are detected on SAR (Synthetic Aperture Radar) imagery, which are not treated in this Document. SAR images have very different characteristics with respect to Optical ones (optical satellite imagery was introduced in chapter 3 <strong>TODO LINK</strong>). We limit our discussion saying that SAR images are not affected by the presence of clouds, because radar waves pass through them and saying that water can be “quite easily” detected on SAR images because water looks black on a SAR image. Of course also these types of images have limitations, in fact, for example, shadows look black as well and it is very difficult to detect flooded areas in urban areas due to the presence of buildings.</p>
+</div>
+<p>The acquisition of suitable optical satellite imagery for a flood event can be very difficult, first of all because of the possible cloud coverage. In fact, often floods are due to meteorological events which could lead to the presence of clouds for many days. In addition, a flood event rapidly evolves over time: water extent grows, reaches a peak, then recedes. The speed of these variations can be very different from case to case, ranging from hours to days. It could happen that a suitable optical satellite image is available only when the water presence is very different with respect  to the peak (for this reason, often SAR images are preferred, not being very much affected by the presence of clouds). In some cases, flood traces can be visible even after the event, for example, vegetation or crops could have changed their look due to the fact that they have been soaked with water, or the terrain could still be very wet and look different on the satellite image with respect to dry terrain.</p>
+<p>When suitable optical imagery is available, in particular if it is possible to access images with an acceptable level of cloud coverage, the flood delineation can be performed. In this case, similarly to the case of burnt area detection, both spectral indices (e.g. Normalised Difference Water Index, NDWI, see 3.2.2.2 <strong>TODO LINK</strong>) and supervised or unsupervised classification can be exploited. Also in this case, when considering and index, the thresholding definition and the training and test sets selection are very important steps which rely on the experience of the mapper.</p>
+<p><a class="reference internal" href="#id21"><span class="std std-numref">Fig. 4.1.6.2</span></a> shows multispectral satellite imagery and the NDWI computed with those images: it is possible to see how the presence of water is highlighted (corresponding to blue colour) by the NDWI.</p>
+<div class="figure align-default" id="id54">
+<span id="id21"></span><img alt="img/4/4.1.6.2.png" src="img/4/4.1.6.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.2 </span><span class="caption-text">– Satellite images and corresponding NDWI for different seasons and different presence of water (blue colour). Source: <a class="reference external" href="https://mygeoblog.com/2019/04/29/cambodia-2-flood-mapping-using-sentinel-2/" rel="noopener noreferrer" target="_blank">https://mygeoblog.com/2019/04/29/cambodia-2-flood-mapping-using-sentinel-2/</a> Processed in Google Earth Engine</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#id22"><span class="std std-numref">Fig. 4.1.6.3</span></a> shows satellite optical images acquired during different phases of the flood event: it is possible to see the different amount of water which is present. <a class="reference internal" href="#id23"><span class="std std-numref">Fig. 4.1.6.4</span></a> shows the inundated areas detected on these images exploiting the NDWI.</p>
+<div class="figure align-default" id="id55">
+<span id="id22"></span><img alt="../_images/4.1.6.3.png" src="../_images/4.1.6.3.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.3 </span><span class="caption-text">– Planet images in the studied area on 20 August 2018 (a), 21 August 2018 (b) and 27 August 2018 (c). Source: Huang, Minmin; Jin, Shuanggen. 2020. “Rapid Flood Mapping and Evaluation with a Supervised Classifier and Change Detection in Shouguang Using Sentinel-1 SAR and Sentinel-2 Optical Data” Remote Sens. 12, no. 13: 2073. <a class="reference external" href="https://doi.org/10.3390/rs12132073" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs12132073</a></span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id56">
+<span id="id23"></span><img alt="../_images/4.1.6.4.png" src="../_images/4.1.6.4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.4 </span><span class="caption-text">– Flood map produced by normalized difference water index (NDWI) on 21 August 2018 (a) and 27 August 2018 (b). Source: Huang, Minmin; Jin, Shuanggen. 2020. “Rapid Flood Mapping and Evaluation with a Supervised Classifier and Change Detection in Shouguang Using Sentinel-1 SAR and Sentinel-2 Optical Data” Remote Sens. 12, no. 13: 2073. <a class="reference external" href="https://doi.org/10.3390/rs12132073" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs12132073</a></span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+</div>
+<p>Flood can be detected as well exploiting supervised or unsupervised classification algorithms, an example is visible in <a class="reference internal" href="#id24"><span class="std std-numref">Fig. 4.1.6.5</span></a>. Then, after the processing, the flooded area must be extracted. <a class="reference internal" href="#id25"><span class="std std-numref">Fig. 4.1.6.6</span></a> shows an example of crisis map for a flood event.</p>
+<div class="figure align-default" id="id57">
+<span id="id24"></span><img alt="../_images/4.1.6.5.png" src="../_images/4.1.6.5.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.5 </span><span class="caption-text">– Flood mapping with supervised classification. Source: Shahabi, Himan et al., Flood Detection and Susceptibility Mapping Using Sentinel-1 Remote Sensing Data and a Machine Learning Approach: Hybrid Intelligence of Bagging Ensemble Based on K-Nearest Neighbor Classifier, Remote Sens. 2020, 12(2), 266; <a class="reference external" href="https://doi.org/10.3390/rs12020266" rel="noopener noreferrer" target="_blank">https://doi.org/10.3390/rs12020266</a></span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id58">
+<span id="id25"></span><img alt="../_images/4.1.6.6.png" src="../_images/4.1.6.6.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.6.6 </span><span class="caption-text">– Example of crisis map for a flood event. <a class="reference external" href="https://www.esa.int/ESA_Multimedia/Images/2012/05/Danube_flood_mapping" rel="noopener noreferrer" target="_blank">https://www.esa.int/ESA_Multimedia/Images/2012/05/Danube_flood_mapping</a></span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="crisis-maps-validation">
+<h2><span class="section-number">4.1.7. </span>Crisis maps validation<a class="headerlink" href="#crisis-maps-validation" title="Permalink to this headline">¶</a></h2>
+<p>Validation is a very important step of data production. Data quality parameters (3.2.4 <strong>TODO LINK</strong>), such as positional and thematic accuracy, completeness and consistency, should be assessed on every mapping product. The best way for validating data is with “ground truth”, e.g. up to date data acquired in field that can be considered as a reference. In principle, every crisis map should be validated with ground truth. It is easy to understand that this is not possible for all events for which crisis maps are produced, in particular in real time, due the difficulties in accessing the area of the disasters, the costs and the time constraints. For this reason, not all products are validated, some of them are, on a sample basis. In this case, dedicated teams are sent in field in order to acquire the needed data. However, all maps are quality controlled, concerning all parameters that do not need data coming from the field, such as map readability, completeness and consistency of legend items, correctness of interpretation text and of the cartographic representation, consistency among map scale and satellite imagery.</p>
+<div class="admonition-supplementary-info admonition">
+<p class="first admonition-title">Supplementary info</p>
+<p class="last">If you are interested in deepening the topic of crisis map validation you can refer to the Join Research Centre Validation Protocol for Emergency Response Geo-information Products <a class="reference external" href="https://ec.europa.eu/jrc/en/publication/eur-scientific-and-technical-research-reports/validation-protocol-emergency-response-geo-information-products" rel="noopener noreferrer" target="_blank">https://ec.europa.eu/jrc/en/publication/eur-scientific-and-technical-research-reports/validation-protocol-emergency-response-geo-information-products</a></p>
+</div>
+</div>
+<div class="section" id="early-warning-and-monitoring-services">
+<h2><span class="section-number">4.1.8. </span>Early warning and monitoring services<a class="headerlink" href="#early-warning-and-monitoring-services" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the crisis mapping, Copernicus EMS delivers services for early warning and monitoring of fires, floods and drought. Let’s introduce these services one by one. These services are also included in the Copernicus EMS activation workflow (<a class="reference internal" href="#id26"><span class="std std-numref">Fig. 4.1.8.1</span></a>).</p>
+<div class="figure align-default" id="id59">
+<span id="id26"></span><img alt="../_images/4.1.8.1.png" src="../_images/4.1.8.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.8.1 </span><span class="caption-text">– The early warning and monitoring services integration in Copernicus EMS workflow. Source: <a class="reference external" href="https://emergency.copernicus.eu/mapping/ems/linking-early-warning-systems" rel="noopener noreferrer" target="_blank">https://emergency.copernicus.eu/mapping/ems/linking-early-warning-systems</a></span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="european-flood-awareness-systems-efas-and-global-flood-awareness-systems-glofas">
+<h2><span class="section-number">4.1.9. </span>European Flood Awareness Systems (EFAS) and Global Flood Awareness Systems (GloFAS)<a class="headerlink" href="#european-flood-awareness-systems-efas-and-global-flood-awareness-systems-glofas" title="Permalink to this headline">¶</a></h2>
+<p>European Flood Awareness Systems (EFAS, <a class="reference external" href="https://www.efas.eu" rel="noopener noreferrer" target="_blank">https://www.efas.eu</a>) and Global Flood Awareness Systems (GloFAS, <a class="reference external" href="https://www.globalfloods.eu/" rel="noopener noreferrer" target="_blank">https://www.globalfloods.eu/</a>) are two similar services, dedicated to flood early warning and monitoring, at two different scales: EFAS is focused on Europe, while GLOFAS is a global service, mapping the whole world. In the following, we are focusing on EFAS.</p>
+<p>National or regional authorities can become partners and have access to real time information from EFAS. EFAS operations are coordinated by the Joint Research Centre of the European Commission, other partners take care of collecting meteorological information, processing data to provide forecasts and collecting information about real time water discharge and water level data. Thanks to EFAS, it is possible to put in place the necessary the preparedness measures to better face upcoming events. The EFAS dissemination service sends notification information about high probability of flooding.</p>
+<p>On the Web interface (<a class="reference internal" href="#id27"><span class="std std-numref">Fig. 4.1.9.1</span></a>) of the Service it is possible to find several information layers:</p>
+<ul class="simple">
+<li>Flood Summary layers, on current and past flood situations</li>
+<li>Hydrological layers, maps of forecasts</li>
+<li>Flash flood layers, warnings based on the Enhanced Runoff Index, based on climatological data</li>
+<li>Initial conditions layers, displays background information e.g. simulated soil moisture or snow water equivalent</li>
+<li>Meteorological layers, accumulated rainfall</li>
+</ul>
+<p>Forecasts are coming from the German Weather Office and ECMWF(European Centre for Medium-Range Weather Forecasts). EFAS early warning can be used to trigger Copernicus EMS Rapid Mapping.</p>
+<p>GLOFAS is a similar service and has a similar Web map interface (<a class="reference internal" href="#id28"><span class="std std-numref">Fig. 4.1.9.2</span></a>).</p>
+<div class="figure align-default" id="id60">
+<span id="id27"></span><img alt="../_images/4.1.9.1.png" src="../_images/4.1.9.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.9.1 </span><span class="caption-text">– EFAS Web map interface. Source: <a class="reference external" href="https://www.efas.eu/efas_frontend/#/home" rel="noopener noreferrer" target="_blank">https://www.efas.eu/efas_frontend/#/home</a></span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-supplementary-info admonition">
+<p class="first admonition-title">Supplementary info</p>
+<p class="last">If you are interested, you can watch this video about EFAS <a class="reference external" href="https://www.youtube.com/watch?v=rL84noOfy_U&amp;feature=youtu.be" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=rL84noOfy_U&amp;feature=youtu.be</a> or this video about GLOFAS <a class="reference external" href="https://www.youtube.com/watch?v=s2YaDjvMt-8&amp;pbjreload=101" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=s2YaDjvMt-8&amp;pbjreload=101</a></p>
+</div>
+<div class="figure align-default" id="id61">
+<span id="id28"></span><img alt="../_images/4.1.9.2.png" src="../_images/4.1.9.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.9.2 </span><span class="caption-text">– EFAS Web map interface. Source: <a class="reference external" href="https://www.globalfloods.eu/glofas-forecasting/" rel="noopener noreferrer" target="_blank">https://www.globalfloods.eu/glofas-forecasting/</a></span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="european-forest-fire-information-system-effis-and-global-wildfire-information-system-gwis">
+<h2><span class="section-number">4.1.10. </span>European Forest Fire Information System (EFFIS) and Global Wildfire Information System (GWIS)<a class="headerlink" href="#european-forest-fire-information-system-effis-and-global-wildfire-information-system-gwis" title="Permalink to this headline">¶</a></h2>
+<p>European Forest Fire Information System (EFFIS) and Global Wildfire Information System (GWIS) are two additional services provided by Copernicus EMS, providing fire events monitoring and archive of past events for Europe (EFFIS) and the whole world (GWIS).</p>
+<p>EFFIS is an early warning system for forest fires. The service includes fire forecast, fire detection and ongoing fire monitoring. With respect to the post event phase, the following data are made available: burnt area maps, land cover damage assessment, emission assessment, potential soil erosion and vegetation regeneration. The fire danger forecast provides short and long term fire danger forecast, as well as monthly and seasonal fire forecast. The service is able to show and monitor active fires, thanks to the detection of hot spots (in thermal infrared band) from MODIS (1 km spatial resolution) and VIIRS (375 m spatial resolution). The data are constantly updated (6 times a day) and the processed data are made available 2-3 hours after the image acquisition (<a class="reference external" href="https://effis.jrc.ec.europa.eu/about-effis/technical-background/active-fire-detection" rel="noopener noreferrer" target="_blank">https://effis.jrc.ec.europa.eu/about-effis/technical-background/active-fire-detection</a>). In addition, the service provides maps of burnt areas mapping, relying on medium (mainly MODIS and VIIRS) to high resolution satellite imagery.</p>
+<p>EFFIS (<a class="reference internal" href="#id29"><span class="std std-numref">Fig. 4.1.10.1</span></a>) and GWIS (<a class="reference internal" href="#id30"><span class="std std-numref">Fig. 4.1.10.2</span></a>) data can be exploited in different ways:</p>
+<ul class="simple">
+<li>To monitor fires in almost real time</li>
+<li>To explore the archive of past events (<a class="reference internal" href="#id31"><span class="std std-numref">Fig. 4.1.10.3</span></a> and <a class="reference internal" href="#id32"><span class="std std-numref">Fig. 4.1.10.4</span></a>)</li>
+<li>To analyse the spatial distribution of events over time</li>
+<li>To produce risk maps, combining the fire information with land cover and urban areas distribution.</li>
+</ul>
+<p>The interface and the typology of the available data for EFFIS is very similar to GWIS ones.</p>
+<div class="figure align-default" id="id62">
+<span id="id29"></span><img alt="../_images/4.1.10.1.png" src="../_images/4.1.10.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.10.1 </span><span class="caption-text">– The EFFIS current situation viewer allows for selecting different background layers, fire danger forecast, damage assessment (active fires, burnt areas and fuels) based on MODIS and VIIRS (for last 1 day, 7 days or 30 days or regarding the fire season). <a class="reference external" href="https://effis.jrc.ec.europa.eu/static/effis_current_situation/public/index.html" rel="noopener noreferrer" target="_blank">https://effis.jrc.ec.europa.eu/static/effis_current_situation/public/index.html</a></span><a class="headerlink" href="#id62" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id63">
+<span id="id30"></span><img alt="../_images/4.1.10.2.png" src="../_images/4.1.10.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.10.2 </span><span class="caption-text">– The GWIS current situation viewer allows for selecting different background layers, fire danger forecast, damage assessment (active fires, burnt areas and fuels) based on MODIS and VIIRS (for last 1 day, 7 days or 30 days or regarding the fire season). <a class="reference external" href="https://gwis.jrc.ec.europa.eu/static/gwis_current_situation/public/index.html" rel="noopener noreferrer" target="_blank">https://gwis.jrc.ec.europa.eu/static/gwis_current_situation/public/index.html</a></span><a class="headerlink" href="#id63" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id64">
+<span id="id31"></span><img alt="../_images/4.1.10.3.png" src="../_images/4.1.10.3.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.10.3 </span><span class="caption-text">– The EFFIS current situation viewer allows also to access analysis tools showing seasonal trends and EFFIS Estimates per Country (<a class="reference external" href="https://effis.jrc.ec.europa.eu/static/effis_current_situation/public/index.html" rel="noopener noreferrer" target="_blank">https://effis.jrc.ec.europa.eu/static/effis_current_situation/public/index.html</a>)</span><a class="headerlink" href="#id64" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id65">
+<span id="id32"></span><img alt="../_images/4.1.10.4.png" src="../_images/4.1.10.4.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.10.4 </span><span class="caption-text">– The GWIS current situation viewer allows also for accessing analysis tools showing estimates of statistics per Country <a class="reference external" href="https://gwis.jrc.ec.europa.eu/static/gwis_current_situation/public/index.html" rel="noopener noreferrer" target="_blank">https://gwis.jrc.ec.europa.eu/static/gwis_current_situation/public/index.html</a></span><a class="headerlink" href="#id65" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-supplementary-info admonition">
+<p class="first admonition-title">Supplementary info</p>
+<p>If you are interested, you can watch this video about EFFIS <a class="reference external" href="https://www.youtube.com/watch?v=s_rymArjxCc" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=s_rymArjxCc</a></p>
+<p class="last">PLEASE NOTE: Most of these analyses can be performed directly on the Web applications, another option is to download the data and process them in a GIS software or to load a Web Service, such as a WMS or WMST, into the desktop GIS.</p>
+</div>
+</div>
+<div class="section" id="european-drought-observatory-edo-and-global-drought-observatory-gdo">
+<h2><span class="section-number">4.1.11. </span>European Drought Observatory (EDO) and Global Drought Observatory (GDO)<a class="headerlink" href="#european-drought-observatory-edo-and-global-drought-observatory-gdo" title="Permalink to this headline">¶</a></h2>
+<p>European Drought Observatory (EDO) and Global Drought Observatory (GDO) provide monitoring and early warning for the Drought phenomenon over Europe and the whole world respectively. Drought is a critical phenomenon linked to precipitation deficiency and prolonged shortages of water which can have significant impacts on human life and activities. EDO     Web Service provides drought indicators for Europe which can be displayed on a map (<a class="reference internal" href="#id33"><span class="std std-numref">Fig. 4.1.11.1</span></a>). The indicators provide information about precipitation, soil moisture, conditions of vegetation, hydrological streamflow and temperature. The service allows to explore the current situation as well as the forecast and the available time series, which can be analysed thanks to the available plot tools.</p>
+<p>The interface and the available tools are similar for the GDO (<a class="reference internal" href="#id34"><span class="std std-numref">Fig. 4.1.11.2</span></a>).</p>
+<div class="figure align-default" id="id66">
+<span id="id33"></span><img alt="../_images/4.1.11.1.png" src="../_images/4.1.11.1.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.11.1 </span><span class="caption-text">– The EDO Web map interface. Source : <a class="reference external" href="https://edo.jrc.ec.europa.eu/edov2/php/index.php?id=1052" rel="noopener noreferrer" target="_blank">https://edo.jrc.ec.europa.eu/edov2/php/index.php?id=1052</a></span><a class="headerlink" href="#id66" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id67">
+<span id="id34"></span><img alt="../_images/4.1.11.2.png" src="../_images/4.1.11.2.png" />
+<p class="caption"><span class="caption-number">Fig. 4.1.11.2 </span><span class="caption-text">– The GDO Web map interface Source: <a class="reference external" href="https://edo.jrc.ec.europa.eu/gdo/php/index.php?id=2001" rel="noopener noreferrer" target="_blank">https://edo.jrc.ec.europa.eu/gdo/php/index.php?id=2001</a></span><a class="headerlink" href="#id67" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../credits.html" class="btn btn-neutral float-right" title="Credits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="part4.html" class="btn btn-neutral float-left" title="4. Geospatial Data Processing for crisis mapping and Copernicus EMS Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, GIS GEOLab team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
