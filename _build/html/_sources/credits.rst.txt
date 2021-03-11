@@ -14,6 +14,14 @@ Professor of GIS and Copernicus Uptake at the Politecnico di Milano (PoliMI), me
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+.. image:: img/bios/Fig_MarcoG.png
+	:width: 160px
+	:align: left
+
+**Marco GIANINETTO** is Professor of Remote Sensing and Copernicus Uptake at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy), and an Associate at the `National Research Council of Italy. <http://www.irea.cnr.it/en/>`_ He is the head of the `Laboratory of Remote Sensing <http://www.abclab.test.polimi.it/index.php?id=72>`_ , member of the Governing Council of the `Italian Society of Remote Sensing <https://aitonline.org/en/>`_ , mentor for the `Copernicus Accelerator <https://accelerator.copernicus.eu/>`_ programme of the European Commission, Co-Editor-in-Chief for `European Journal of Remote Sensing <https://www.tandfonline.com/toc/tejr20/current>`_ , Associate Editor for `International Journal of Remote Sensing <https://www.tandfonline.com/toc/tres20/current>`_ , and Associate Editor for `Journal of Applied Remote Sensing <https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing?SSO=1>`_ . Marco Gianinetto has been a co-author of the study `Space Market Uptake in Europe <https://www.europarl.europa.eu/thinktank/en/document.html?reference=IPOL_STU%282016%29569984>`_ for the `European Parliament. <https://www.europarl.europa.eu/portal/en>`_
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
 .. image:: img/bios/Daniele2.png
     :width: 160px
     :align: left
@@ -43,6 +51,15 @@ Carlo Andrea Biraghi was born in Milan, Italy, in 1989. He received the B.Sc. an
     :align: left
 
 Eng. Gorica Bratic obtained her BSc degree in Environmental Engineering at University of Novi Sad, Faculty of Technical Sciences in 2015 and MSC degree in Environmental and Geomatics Engineering at Politecnico di Milano in 2018. Since June 2018 she joined the GEOlab team of Politecnico di Milano as a temporary research fellow and in November 2018 she started her PhD on the Department of Civil and Environmental Engineering. Her main field of interest is inter-comparison and validation of global high-resolution land cover maps. Her research relies on Free and Open Source Software technologies.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+.. figure:: img/bios/Fig_FrancescoP.png
+	:width: 160px
+	:align: left
+
+**Francesco Niccolò POLINELLI** (MSc in Environmental and Land Planning Engineering) is a research assistant at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy) and PhD candidate in Environmental and Infrastructure Engineering. His research interests are Remote Sensing technologies for Earth Observation, Geosciences and Machine Learning. The main field of application are the monitoring and mapping of vegetation, soil erosion analysis and the effects of climate change on land cover evolution.
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
