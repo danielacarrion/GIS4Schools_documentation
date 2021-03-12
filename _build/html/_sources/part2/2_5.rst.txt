@@ -93,6 +93,8 @@ See :numref:`2.5.4.1` to follow with the instructions. Go to **Raster** Menu **â
    
    -- Vectorization steps and result.
 
+.. _2.5.5:
+
 Clip raster with a mask, clip raster by extent
 ----------------------------------------------
 

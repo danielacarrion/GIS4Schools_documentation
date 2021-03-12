@@ -1,3 +1,5 @@
+.. _2.3:
+
 Extending QGIS functionalities
 ==============================
 

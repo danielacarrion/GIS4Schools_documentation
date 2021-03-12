@@ -1,5 +1,7 @@
 .. include:: ../html_lat.txt
 
+.. _3.4:
+
 Hands-on exercises
 ===================
 
@@ -137,6 +139,8 @@ The Ratio Vegetation Index (RVI) is proportional to chlorophyll’s concentratio
    =========  ====================================================
 
 |br|
+
+.. _3.4.1.8:
 
 QGIS set-up
 `````````````

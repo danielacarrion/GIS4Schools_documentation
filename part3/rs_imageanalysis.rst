@@ -3,6 +3,8 @@
 Principles of image analysis 
 =============================
 
+.. _3.2.1:
+
 The spectral signature
 -----------------------
 
@@ -134,6 +136,8 @@ z is the axis for spectral band 3.
 
 .. _Spectral-indices-for-environmental-monitoring:
 
+.. _3.2.2:
+
 Spectral indices for environmental monitoring
 ----------------------------------------------
 
@@ -169,6 +173,8 @@ The most popular spectral indices are those to retrieve the status of vegetation
 |br|
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
+
+.. _3.2.2.2:
 
 How spectral indices are designed 
 ````````````````````````````````````

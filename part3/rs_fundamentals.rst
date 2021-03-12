@@ -269,6 +269,8 @@ Copernicus’s information can be used by end-users for a wide range of applicat
 
 .. _Multispectral-Sentinel-satellites:
 
+.. _3.1.3.2:
+
 Multispectral Sentinel satellites
 ````````````````````````````````````
 **Sentinel-2** |br|

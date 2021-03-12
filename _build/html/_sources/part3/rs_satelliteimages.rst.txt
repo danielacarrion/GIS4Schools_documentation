@@ -1,6 +1,5 @@
 .. include:: ../html_lat.txt
 
-
 Access to Copernicus satellite images for free
 ===============================================
 
