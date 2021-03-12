@@ -22,8 +22,8 @@ from docutils.nodes import Element
 # -- Project information -----------------------------------------------------
 
 project = 'GIS4Schools'
-copyright = '2020, GIS GEOLab team'
-author = 'GIS GEOLab team'
+copyright = '2021, GEOLab'
+author = 'GEOLab'
 
 
 # -- General configuration ---------------------------------------------------

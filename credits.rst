@@ -14,19 +14,19 @@ Professor of GIS and Copernicus Uptake at the Politecnico di Milano (PoliMI), me
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: img/bios/Fig_MarcoG.png
-	:width: 160px
-	:align: left
-
-Marco GIANINETTO is Professor of Remote Sensing and Copernicus Uptake at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy), and an Associate at the `National Research Council of Italy. <http://www.irea.cnr.it/en/>`_ He is the head of the `Laboratory of Remote Sensing <http://www.abclab.test.polimi.it/index.php?id=72>`_ , member of the Governing Council of the `Italian Society of Remote Sensing <https://aitonline.org/en/>`_ , mentor for the `Copernicus Accelerator <https://accelerator.copernicus.eu/>`_ programme of the European Commission, Co-Editor-in-Chief for `European Journal of Remote Sensing <https://www.tandfonline.com/toc/tejr20/current>`_ , Associate Editor for `International Journal of Remote Sensing <https://www.tandfonline.com/toc/tres20/current>`_ , and Associate Editor for `Journal of Applied Remote Sensing <https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing?SSO=1>`_ . Marco Gianinetto has been a co-author of the study `Space Market Uptake in Europe <https://www.europarl.europa.eu/thinktank/en/document.html?reference=IPOL_STU%282016%29569984>`_ for the `European Parliament. <https://www.europarl.europa.eu/portal/en>`_
-
----------------------------------------------------------------------------------------------------------------------------------------------------
-
 .. image:: img/bios/Daniela_Carrion.JPG
 	:width: 160px
 	:align: left
 
 Daniela Carrion is Assistant Professor at Politecnico di Milano, teacher of GIS and Geospatial data processing and mapping for crisis management. She acquired expertise on crisis mapping during a two year experience as post-doc at the Joint Research Centre (Ispra, Italy) of the European Commission, where she performed technical and scientific validation of Emergency Services and Crisis Maps. She is co-chair of the Commission on Ubiquitous Mapping of the International Cartographic Association. Her main research activities are: use of Volunteered Geographic Information for environmental applications and Crisis Mapping, database design and implementation, map readability, geoid computation, height datum problem and gravity field interaction with levelling measurements.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+.. image:: img/bios/Fig_MarcoG.png
+	:width: 160px
+	:align: left
+
+Marco GIANINETTO is Professor of Remote Sensing and Copernicus Uptake at `Politecnico di Milano <https://www.polimi.it/en/>`_ (Italy), and an Associate at the `National Research Council of Italy. <http://www.irea.cnr.it/en/>`_ He is the head of the `Laboratory of Remote Sensing <http://www.abclab.test.polimi.it/index.php?id=72>`_ , member of the Governing Council of the `Italian Society of Remote Sensing <https://aitonline.org/en/>`_ , mentor for the `Copernicus Accelerator <https://accelerator.copernicus.eu/>`_ programme of the European Commission, Co-Editor-in-Chief for `European Journal of Remote Sensing <https://www.tandfonline.com/toc/tejr20/current>`_ , Associate Editor for `International Journal of Remote Sensing <https://www.tandfonline.com/toc/tres20/current>`_ , and Associate Editor for `Journal of Applied Remote Sensing <https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing?SSO=1>`_ . Marco Gianinetto has been a co-author of the study `Space Market Uptake in Europe <https://www.europarl.europa.eu/thinktank/en/document.html?reference=IPOL_STU%282016%29569984>`_ for the `European Parliament. <https://www.europarl.europa.eu/portal/en>`_
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,6 +62,14 @@ Eng. Gorica Bratic obtained her BSc degree in Environmental Engineering at Unive
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+.. image:: img/bios/Chiara1.jpg
+    :width: 160px
+    :align: left
+
+Chiara Gerosa was born in Lecco, Italy, in 1995. She received a B.sc. degree in Civil and Environmental Engineering in 2017 and a M.sc. degree with honors in Civil Engineering for Risk Mitigation in 2020. Since September 2020 she has joined the Geomatics and Earth Observation laboratory (GEOlab) team of Politecnico di Milano as a temporary research fellow. Her main research activity is related to Remote Sensing, Citizen Science and environmental data analysis in a GIS environment.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
 .. figure:: img/bios/Fig_FrancescoP.png
 	:width: 160px
 	:align: left
@@ -75,14 +83,6 @@ Francesco Niccolò POLINELLI (MSc in Environmental and Land Planning Engineering
 	:align: left
 
 Eng. Juan Fernando Toro Herrera is a Civil Engineer and Economist from the Universidad de Los Andes, Colombia, and obtained the specializing Master of Civil Engineering for Risk Mitigation at Politecnico di Milano in December 2018. He became part of the Geomatics and Earth Observation laboratory (GEOlab) team in August of 2019 as a temporary research fellow. In November 2019, he became a PhD student in the program of Infrastructure and Environmental Engineering at Politecnico di Milano. Currently, his work involves developing a web platform favouring water quality data sharing. His research interest includes spatial data analysis and spatial statistics.
-
----------------------------------------------------------------------------------------------------------------------------------------------------
-
-.. image:: img/bios/Chiara1.jpg
-    :width: 160px
-    :align: left
-
-Chiara Gerosa was born in Lecco, Italy, in 1995. She received a B.sc. degree in Civil and Environmental Engineering in 2017 and a M.sc. degree with honors in Civil Engineering for Risk Mitigation in 2020. Since September 2020 she has joined the Geomatics and Earth Observation laboratory (GEOlab) team of Politecnico di Milano as a temporary research fellow. Her main research activity is related to Remote Sensing, Citizen Science and environmental data analysis in a GIS environment.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
