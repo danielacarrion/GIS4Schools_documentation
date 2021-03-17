@@ -98,7 +98,7 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 
 How to compare spectral signatures
 ````````````````````````````````````
-Spectral signatures are curves that describe the variation of reflectance with wavelengths :ref:`What-is-a-spectral-signature`. The closer the curves are, the more they are similar. |br|
+Spectral signatures are curves that describe the variation of reflectance with wavelengths (see :ref:`What-is-a-spectral-signature`). The closer the curves are, the more they are similar. |br|
 Unfortunately, it is difficult to calculate the “distance” between curves.
 
 Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called **feature space** and has **ONE AXIS FOR EACH SPECTRAL BAND**. |br|
@@ -180,7 +180,7 @@ How spectral indices are designed
 ````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, moisture content, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
 
-Let's see some examples for vegetation.
+Let's see some examples for **VEGETATION**.
 
 Look at the spectral signature of a vegetated image pixel (:numref:`Fig1_SI`). |br|
 The gap between the low reflectance in the Red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.
@@ -193,7 +193,7 @@ The gap between the low reflectance in the Red band (due to chlorophylls), and t
 
 In the example of :numref:`Fig1_SI`, we have  :math:`\rho_{Red}=0.05` and :math:`\rho_{NIR}=0.55`.
 
-Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and Red reflectances is used as a proxy for overall "amount and health" of green vegetation.
+Moreover, the more vigour the vegetation is **OR** the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and Red reflectances is used as a proxy for *overall "amount and health" of green vegetation*.
 
 .. _Fig2_SI:
 .. figure:: /img/3/Fig2_SI.png
@@ -256,10 +256,10 @@ Opposite to RVI, **FOR VEGETATION COVER** NDVI is bounded from below (often NDVI
 
 While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all land covers. In this case, NDVI will have the following values:
 
-- NDVI **close to -1** is a typical value for clear water,
-- **-1<NDVI<0** are typical values for polluted water, and for snow or ice,
-- NDVI **close to 0** is a typical value for clouds,
-- Slightly positive NDVI (**0<NDVI<0.2**) are typical values for bare soil (i.e. soil without vegetation).
+- NDVI **close to -1** is a typical value for clear water (see :numref:`Fig2_signature`),
+- **-1<NDVI<0** are typical values for polluted water (see :numref:`Fig7_signature`), and for snow or ice (see :numref:`Fig3_signature`),
+- NDVI **close to 0** is a typical value for clouds (see :numref:`Fig4_signature`),
+- Slightly positive NDVI (**0<NDVI<0.2**) are typical values for bare soil (see :numref:`Fig5_signature`).
 
 .. hint:: **Small activity** |br|
 	Most satellite-based crop monitoring systems use NDVI (or similar spectral indices) to show farmers which parts of their fields have more stressed vegetation. |br|
@@ -280,7 +280,7 @@ The **Normalized Difference Water Index (NDWI)** is built on the effects of wate
 NDWI is a normalized index ranging from -1 to 1, but for **WATER** it has positive values. The larger the ratio, the more “amount of water” is present in the image pixel. |br|
 The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDVI<0.3) from flooded areas (NDWI>0.3).
 
-.. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, (:math:`NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}`) uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
+.. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, (:math:`NDWI=\frac{\rho_{NIR}-\rho_{SWIR}}{\rho_{NIR}+\rho_{SWIR}}`) uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
 
 .. caution:: The values and thresholds of the spectral indices described above are intended as general recommendations. |br|
 	The analyst’s experience can suggest more appropriate values to the specific case study.
@@ -381,7 +381,7 @@ Thus, the Minimum Distance (to Means) classifier labels the image pixels based t
 .. note:: See :ref:`Mapping-crop-types` to check how the Minimum Distance (to Means) classifier works.
 
 .. hint:: **Small activity** |br|
-	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_.
+	Navigate the `CORINE land cover map of Europe <https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&source=sd>`_ (inventory of 44 land cover classes with minimum mapping unit of 25 ha for areal phenomena and 100 m for linear phenomena).
 
 **Spectral Angle Mapper** |br|
 Another simple yet popular method is the **Spectral Angle Mapper** classifier. This technique:
@@ -396,9 +396,20 @@ Thus, the Spectral Angle Mapper classifier labels the image pixels based their "
 .. hint:: **Small activity** |br|
 	See how the Spectral Angle Mapper classifier works (Credit: `rdrr.io <https://rdrr.io/>`_).
 
+.. _Fig10b_signature:
+.. figure:: /img/3/Fig10b_signature.png
+	:width: 70%
+	:align: center
+
+	Satellite image with water and vegetation samples.
+
 .. raw:: html
 
 	<iframe width="100%" height="500px" src="https://rdrr.io/snippets/embed/?code=%23%23%20Load%20libraries%0Alibrary(RStoolbox)%0Alibrary(raster)%0Alibrary(ggplot2)%0A%0A%23%23%20Load%20test%20image%0Adata(lsat)%20%0A%0A%23%23%20Collect%20training%20samples%20%0A%23%23%20First%20location%20is%20water%2C%20second%20is%20open%20agricultural%20vegetation%0Apts%20%3C-%20data.frame(x%20%3D%20c(624720%2C%20627480)%2C%20y%20%3D%20c(-414690%2C%20-411090))%0Atraining_samples%20%3C-%20extract(lsat%2C%20pts)%0Arownames(training_samples)%20%3C-%20c(%22water%22%2C%20%22vegetation%22)%0A%0A%23%23%20Calculate%20spectral%20angles%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20TRUE)%0A%0A%23%23%20Plot%20spectral%20angles%20(spectral%20signatures'%20similarity)%0Aplot(lsat_sam)%0A%0A%23%23%20Classify%20based%20on%20minimum%20angle%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20FALSE)%0A%0A%23%23%20Show%20classification%20map%0AggR(lsat_sam%2C%20forceCat%20%3D%20TRUE%2C%20geom_raster%3DTRUE)%20%2B%20%0A%20%20%20%20%20%20%20%20scale_fill_manual(values%20%3D%20c(%22blue%22%2C%20%22green%22)%2C%20labels%20%3D%20c(%22water%22%2C%20%22vegetation%22))%0A%0A%23%23%20Show%20test%20image%0AggRGB(lsat%2C%20stretch%20%3D%20%22lin%22)" frameborder="0"></iframe>
+
+|br|
+
+.. tip:: Let's try including a new forset class using as training sample the image pixel with coordinates **x = 620000, y = -415000.** What happens?
 
 |br|
 |br|
@@ -554,4 +565,4 @@ Typically, user’s and producer’s accuracy for a given land cover class are d
 
 |br|
 
-(v.11.03.20-10.15)
+(v.17.03.20-16.36)

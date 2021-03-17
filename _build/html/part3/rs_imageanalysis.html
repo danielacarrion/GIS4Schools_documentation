@@ -445,7 +445,7 @@ Multispectral satellite images capture both the sunlight reflected by the Earth�
 </div>
 <div class="section" id="how-to-compare-spectral-signatures">
 <span id="id3"></span><h3><span class="section-number">3.2.1.3. </span>How to compare spectral signatures<a class="headerlink" href="#how-to-compare-spectral-signatures" title="Permalink to this headline">¶</a></h3>
-<p>Spectral signatures are curves that describe the variation of reflectance with wavelengths <a class="reference internal" href="#what-is-a-spectral-signature"><span class="std std-ref">What is a spectral signature</span></a>. The closer the curves are, the more they are similar. <br />
+<p>Spectral signatures are curves that describe the variation of reflectance with wavelengths (see <a class="reference internal" href="#what-is-a-spectral-signature"><span class="std std-ref">What is a spectral signature</span></a>). The closer the curves are, the more they are similar. <br />
 Unfortunately, it is difficult to calculate the “distance” between curves.</p>
 <p>Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called <strong>feature space</strong> and has <strong>ONE AXIS FOR EACH SPECTRAL BAND</strong>. <br />
 In the feature space, the spectral signatures become points (<a class="reference internal" href="#fig8bis-signature"><span class="std std-numref">Fig. 3.2.1.9</span></a>).</p>
@@ -540,7 +540,7 @@ z is the axis for spectral band 3.</p>
 <div class="section" id="how-spectral-indices-are-designed">
 <span id="id6"></span><span id="examples-of-spectral-indices-for-studying-vegetation"></span><h3><span class="section-number">3.2.2.2. </span>How spectral indices are designed<a class="headerlink" href="#how-spectral-indices-are-designed" title="Permalink to this headline">¶</a></h3>
 <p>Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, moisture content, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.</p>
-<p>Let’s see some examples for vegetation.</p>
+<p>Let’s see some examples for <strong>VEGETATION</strong>.</p>
 <p>Look at the spectral signature of a vegetated image pixel (<a class="reference internal" href="#fig1-si"><span class="std std-numref">Fig. 3.2.2.1</span></a>). <br />
 The gap between the low reflectance in the Red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.</p>
 <div class="figure align-center" id="id20">
@@ -548,7 +548,7 @@ The gap between the low reflectance in the Red band (due to chlorophylls), and t
 <p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Spectral signature of a decidous tree with highlighted the gap between the Red and NIR.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the example of <a class="reference internal" href="#fig1-si"><span class="std std-numref">Fig. 3.2.2.1</span></a>, we have  <span class="math notranslate nohighlight">\(\rho_{Red}=0.05\)</span> and <span class="math notranslate nohighlight">\(\rho_{NIR}=0.55\)</span>.</p>
-<p>Moreover, the more vigour the vegetation is, or the more green biomass is present, the larger this gap is (<a class="reference internal" href="#fig2-si"><span class="std std-numref">Fig. 3.2.2.2</span></a>). Thus, the difference between NIR and Red reflectances is used as a proxy for overall “amount and health” of green vegetation.</p>
+<p>Moreover, the more vigour the vegetation is <strong>OR</strong> the more green biomass is present, the larger this gap is (<a class="reference internal" href="#fig2-si"><span class="std std-numref">Fig. 3.2.2.2</span></a>). Thus, the difference between NIR and Red reflectances is used as a proxy for <em>overall “amount and health” of green vegetation</em>.</p>
 <div class="figure align-center" id="id21">
 <span id="fig2-si"></span><img alt="../_images/Fig2_SI.png" src="../_images/Fig2_SI.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.2.2 </span><span class="caption-text">Colours and spectral signatures of healthy and senescing leaves.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
@@ -601,10 +601,10 @@ If we are looking at a mixed image pixel with healthy vegetation, then:</p>
 </div>
 <p>While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all land covers. In this case, NDVI will have the following values:</p>
 <ul class="simple">
-<li>NDVI <strong>close to -1</strong> is a typical value for clear water,</li>
-<li><strong>-1&lt;NDVI&lt;0</strong> are typical values for polluted water, and for snow or ice,</li>
-<li>NDVI <strong>close to 0</strong> is a typical value for clouds,</li>
-<li>Slightly positive NDVI (<strong>0&lt;NDVI&lt;0.2</strong>) are typical values for bare soil (i.e. soil without vegetation).</li>
+<li>NDVI <strong>close to -1</strong> is a typical value for clear water (see <a class="reference internal" href="#fig2-signature"><span class="std std-numref">Fig. 3.2.1.2</span></a>),</li>
+<li><strong>-1&lt;NDVI&lt;0</strong> are typical values for polluted water (see <a class="reference internal" href="#fig7-signature"><span class="std std-numref">Fig. 3.2.1.7</span></a>), and for snow or ice (see <a class="reference internal" href="#fig3-signature"><span class="std std-numref">Fig. 3.2.1.3</span></a>),</li>
+<li>NDVI <strong>close to 0</strong> is a typical value for clouds (see <a class="reference internal" href="#fig4-signature"><span class="std std-numref">Fig. 3.2.1.4</span></a>),</li>
+<li>Slightly positive NDVI (<strong>0&lt;NDVI&lt;0.2</strong>) are typical values for bare soil (see <a class="reference internal" href="#fig5-signature"><span class="std std-numref">Fig. 3.2.1.5</span></a>).</li>
 </ul>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -623,7 +623,7 @@ The list of existing spectral indices is very long, but you could build your own
 The threshold <strong>NDWI=0.3</strong> is often used to differentiate non-flooded areas (NDVI&lt;0.3) from flooded areas (NDWI&gt;0.3).</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">A DIFFERENT spectral index, also called <a class="reference external" href="https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf" rel="noopener noreferrer" target="_blank">Normalized Difference Water Index (NDWI)</a>, (<span class="math notranslate nohighlight">\(NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}\)</span>) uses NIR and SWIR spectral bands to detect <em>water stress in vegetation (e.g. drought)</em>.</p>
+<p class="last">A DIFFERENT spectral index, also called <a class="reference external" href="https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf" rel="noopener noreferrer" target="_blank">Normalized Difference Water Index (NDWI)</a>, (<span class="math notranslate nohighlight">\(NDWI=\frac{\rho_{NIR}-\rho_{SWIR}}{\rho_{NIR}+\rho_{SWIR}}\)</span>) uses NIR and SWIR spectral bands to detect <em>water stress in vegetation (e.g. drought)</em>.</p>
 </div>
 <div class="admonition caution">
 <p class="first admonition-title">Caution</p>
@@ -714,7 +714,7 @@ A simple and popular method is the <strong>Minimum Distance (to Means)</strong> 
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
-Navigate the <a class="reference external" href="https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&amp;source=sd" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe</a>.</p>
+Navigate the <a class="reference external" href="https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fimage.discomap.eea.europa.eu%2Farcgis%2Frest%2Fservices%2FCorine%2FCLC2018_WM%2FMapServer&amp;source=sd" rel="noopener noreferrer" target="_blank">CORINE land cover map of Europe</a> (inventory of 44 land cover classes with minimum mapping unit of 25 ha for areal phenomena and 100 m for linear phenomena).</p>
 </div>
 <p><strong>Spectral Angle Mapper</strong> <br />
 Another simple yet popular method is the <strong>Spectral Angle Mapper</strong> classifier. This technique:</p>
@@ -730,7 +730,16 @@ Another simple yet popular method is the <strong>Spectral Angle Mapper</strong> 
 <p class="last"><strong>Small activity</strong> <br />
 See how the Spectral Angle Mapper classifier works (Credit: <a class="reference external" href="https://rdrr.io/" rel="noopener noreferrer" target="_blank">rdrr.io</a>).</p>
 </div>
-<iframe width="100%" height="500px" src="https://rdrr.io/snippets/embed/?code=%23%23%20Load%20libraries%0Alibrary(RStoolbox)%0Alibrary(raster)%0Alibrary(ggplot2)%0A%0A%23%23%20Load%20test%20image%0Adata(lsat)%20%0A%0A%23%23%20Collect%20training%20samples%20%0A%23%23%20First%20location%20is%20water%2C%20second%20is%20open%20agricultural%20vegetation%0Apts%20%3C-%20data.frame(x%20%3D%20c(624720%2C%20627480)%2C%20y%20%3D%20c(-414690%2C%20-411090))%0Atraining_samples%20%3C-%20extract(lsat%2C%20pts)%0Arownames(training_samples)%20%3C-%20c(%22water%22%2C%20%22vegetation%22)%0A%0A%23%23%20Calculate%20spectral%20angles%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20TRUE)%0A%0A%23%23%20Plot%20spectral%20angles%20(spectral%20signatures'%20similarity)%0Aplot(lsat_sam)%0A%0A%23%23%20Classify%20based%20on%20minimum%20angle%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20FALSE)%0A%0A%23%23%20Show%20classification%20map%0AggR(lsat_sam%2C%20forceCat%20%3D%20TRUE%2C%20geom_raster%3DTRUE)%20%2B%20%0A%20%20%20%20%20%20%20%20scale_fill_manual(values%20%3D%20c(%22blue%22%2C%20%22green%22)%2C%20labels%20%3D%20c(%22water%22%2C%20%22vegetation%22))%0A%0A%23%23%20Show%20test%20image%0AggRGB(lsat%2C%20stretch%20%3D%20%22lin%22)" frameborder="0"></iframe><p><br />
+<div class="figure align-center" id="id25">
+<span id="fig10b-signature"></span><a class="reference internal image-reference" href="../_images/Fig10b_signature.png"><img alt="../_images/Fig10b_signature.png" src="../_images/Fig10b_signature.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">Satellite image with water and vegetation samples.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<iframe width="100%" height="500px" src="https://rdrr.io/snippets/embed/?code=%23%23%20Load%20libraries%0Alibrary(RStoolbox)%0Alibrary(raster)%0Alibrary(ggplot2)%0A%0A%23%23%20Load%20test%20image%0Adata(lsat)%20%0A%0A%23%23%20Collect%20training%20samples%20%0A%23%23%20First%20location%20is%20water%2C%20second%20is%20open%20agricultural%20vegetation%0Apts%20%3C-%20data.frame(x%20%3D%20c(624720%2C%20627480)%2C%20y%20%3D%20c(-414690%2C%20-411090))%0Atraining_samples%20%3C-%20extract(lsat%2C%20pts)%0Arownames(training_samples)%20%3C-%20c(%22water%22%2C%20%22vegetation%22)%0A%0A%23%23%20Calculate%20spectral%20angles%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20TRUE)%0A%0A%23%23%20Plot%20spectral%20angles%20(spectral%20signatures'%20similarity)%0Aplot(lsat_sam)%0A%0A%23%23%20Classify%20based%20on%20minimum%20angle%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20FALSE)%0A%0A%23%23%20Show%20classification%20map%0AggR(lsat_sam%2C%20forceCat%20%3D%20TRUE%2C%20geom_raster%3DTRUE)%20%2B%20%0A%20%20%20%20%20%20%20%20scale_fill_manual(values%20%3D%20c(%22blue%22%2C%20%22green%22)%2C%20labels%20%3D%20c(%22water%22%2C%20%22vegetation%22))%0A%0A%23%23%20Show%20test%20image%0AggRGB(lsat%2C%20stretch%20%3D%20%22lin%22)" frameborder="0"></iframe><p><br /></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Let’s try including a new forset class using as training sample the image pixel with coordinates <strong>x = 620000, y = -415000.</strong> What happens?</p>
+</div>
+<p><br />
 <br /></p>
 </div>
 </div>
@@ -746,15 +755,15 @@ See how the Spectral Angle Mapper classifier works (Credit: <a class="reference 
 <p>Let’s see how precision and accuracy work. Assume that two archers are participating in a tournament.</p>
 <p>The first archer always hit the same spot. He is <strong>precise</strong>. <br />
 However, his arrows are systematically displaced from the target’s centre (<a class="reference internal" href="#fig1-validation"><span class="std std-numref">Fig. 3.2.4.1</span></a>). Thus, the second archer is <strong>inaccurate</strong>.</p>
-<div class="figure align-center" id="id25">
+<div class="figure align-center" id="id26">
 <span id="fig1-validation"></span><a class="reference internal image-reference" href="../_images/Fig1_validation.png"><img alt="../_images/Fig1_validation.png" src="../_images/Fig1_validation.png" style="width: 328.5px; height: 285.3px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.4.1 </span><span class="caption-text">The first archer’s shots.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4.1 </span><span class="caption-text">The first archer’s shots.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second archer fires all his arrows grouped in the target’s centre (<a class="reference internal" href="#fig3-validation"><span class="std std-numref">Fig. 3.2.4.2</span></a>). <br />
 The archer is precise and unbiased. Thus, the first archer is <strong>accurate</strong>.</p>
-<div class="figure align-center" id="id26">
+<div class="figure align-center" id="id27">
 <span id="fig3-validation"></span><a class="reference internal image-reference" href="../_images/Fig3_validation.png"><img alt="../_images/Fig3_validation.png" src="../_images/Fig3_validation.png" style="width: 285.3px; height: 285.3px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.4.2 </span><span class="caption-text">The second archer’s shots.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4.2 </span><span class="caption-text">The second archer’s shots.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -776,15 +785,15 @@ The archer is precise and unbiased. Thus, the first archer is <strong>accurate</
 <li>Rows represent the instances of testing samples in the predicted land cover class,</li>
 <li>Instances belonging to the main diagonal (green cells) are the number of testing samples classified correctly.</li>
 </ul>
-<div class="figure align-center" id="id27">
+<div class="figure align-center" id="id28">
 <span id="fig1-confmatrix"></span><img alt="../_images/Fig1_confmatrix.png" src="../_images/Fig1_confmatrix.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.4.3 </span><span class="caption-text">Confusion matrix. Number of testing samples correctly classified.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4.3 </span><span class="caption-text">Confusion matrix. Number of testing samples correctly classified.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#fig2-confmatrix"><span class="std std-numref">Fig. 3.2.4.4</span></a> highlights the number of misclassified testing samples (red cells). <br />
 Overall, the confusion matrix has <strong>434 testing samples.</strong></p>
-<div class="figure align-center" id="id28">
+<div class="figure align-center" id="id29">
 <span id="fig2-confmatrix"></span><img alt="../_images/Fig2_confmatrix.png" src="../_images/Fig2_confmatrix.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.4.4 </span><span class="caption-text">Confusion matrix. Number of misclassified testing samples.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4.4 </span><span class="caption-text">Confusion matrix. Number of misclassified testing samples.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -856,7 +865,7 @@ Calculate the overall accuracy and the per-class producer’s accuracy and user�
 <p class="last">For additional information, see the practical guide on <a class="reference external" href="http://www.fao.org/3/i5601e/i5601e.pdf" rel="noopener noreferrer" target="_blank">Map Accuracy Assessment and Area Estimation</a> of <a class="reference external" href="http://www.fao.org/home/en/" rel="noopener noreferrer" target="_blank">FAO</a>.</p>
 </div>
 <p><br /></p>
-<p>(v.11.03.20-10.15)</p>
+<p>(v.17.03.20-16.36)</p>
 </div>
 </div>
 </div>
