@@ -10,13 +10,25 @@ In this section we will revisit some of the contents and tools introduced in pre
 
    `Data download <https://polimi365-my.sharepoint.com/:u:/g/personal/10557275_polimi_it/EWrP3le-lmFLjy66Jd4CYp4Bqxbz--3tN-OPoZiGIRbLHg?e=B9sL3W>`_.
 
-:numref:`4.2.1` presents the files structure used for both of the exercises to manage the different inputs and outputs inside the project. It is recommended to create groups of layers for each study case. To create a new group click on the icon ``Add Group`` in the **Layers** pane and then provide a name to the group of layers. 
+:numref:`4.2.1` presents the files structure used for both of the exercises to manage the different inputs and outputs inside the project. It is recommended to create groups of layers for each study case. To create a new group click on the icon ``Add Group`` in the **Layers** pane and then provide a name to the group of layers.
 
 .. _4.2.1:
 .. figure:: /img/4/4.2.1.png
    :align: center
 
    QGIS project folders and layers structure
+
+For the project we will make use of the Google Satellite base map which you can set though the “QuickMapServices” plugin. On the menu bar, go to ``Web`` **(1)** → ``QuickMapServices`` **(2)** → ``Google`` **(3)** → ``Google Satellite`` **(4)** . This will not only allow us to define a base map for our project, but also define the project Coordinate Reference System - CRS (in case this is the first added layer). The project CRS will be set to the EPSG:3857 – WGS 84 /Pseudo-Mercator.
+
+.. note::
+
+   The `EPSG:3857 <https://epsg.io/3857>`_ , also known as Web Mercator projection, is a Spherical Mercator projection coordinate system. It is the standard projection used on web-based mapping programs.
+
+.. _4.2.2:
+.. figure:: /img/4/4.2.2.png
+   :align: center
+
+   Add the “Google Satellite” base map through the QuickMapServices
 
 .. _4.2.1s:
 
@@ -25,7 +37,8 @@ Flood Mapping and flood impact
 
 * **Overview**
 
-Flood mapping helps to estimate the flood extent on a large scale. It is an important tool during different phases of an emergency giving support to emergency activities, including recovery and rehabilitation, as well as the planning of prevention measures. In this practice, we will exploit flood maps in order to show the impact of the flood for a specific study case. 
+Flood mapping helps to estimate the flood extent on a large scale. It is an important tool during different phases of an emergency giving support to emergency activities, including recovery and rehabilitation, as well as the planning of prevention measures. In this practice, we will exploit flood maps in order to show the impact of the flood for a specific study case.
+
 * **Objective**
 
 The purpose of this practice is to guide you on assessing the exposure of a human settlement in a flood event.
@@ -94,7 +107,7 @@ Inside the product page, as seen in :numref:`4.2.1.4`, you will have the option 
    * selecting the maps delivered by CEMS in **PDF (1)** and **JPEG** format
    * downloading the CEMS vector layers produced for the delineation product by selecting the **ZIP (2)** file, accepting the disclaimers on the use of the products, and ``download`` **(3)** the package.
 
-Now, you can make use of the different layers produced for de AOI delineating the flooded area.
+Now, you can make use of the different layers produced for the AOI delineating the flooded area.
 
 .. _4.2.1.4:
 .. figure:: /img/4/4.2.1.4.png
@@ -127,7 +140,7 @@ After completely fill in the fields, click on the ``search`` **(7)** button to r
 
 .. note::
 
-   The Top of Atmosphere (TOA) corrections aim at separating the reflectance emitted for objects on the Earth’s surface from atmospheric disturbances that are part of the reflected energy recorded by the sensor. (https://www.un-spider.org/node/10958)
+   The Top of Atmosphere (TOA) corrections aim at separating the reflectance emitted for objects on the Earth's surface from atmospheric disturbances that are part of the reflected energy recorded by the sensor. (https://www.un-spider.org/node/10958)
 
 .. _4.2.1.5:
 .. figure:: /img/4/4.2.1.5.png
@@ -223,7 +236,7 @@ In the next steps we will:
    6. Build the hazard map by combining the layers and defining different symbology
    7. Prepare a map composition of the hazard assessment
 
-1. Add the two images for the pre- and post-event from the paths and file names as specified below.  
+   1. Add the two images for the pre- and post-event from the paths and file names as specified below.  
 
    * Pre-event:
       * Path: ``.\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\EOBrowser-Scihub\EO_Browser_images_pre.zip``
@@ -382,15 +395,15 @@ Apply the symbology by clicking on ``Classify`` **(9)** → ``OK``. The layer sh
 
 5. Query the OSM buildings features using the QuickOSM plugin.
 
- For the extraction of the OSM features follow the instruction in :numref:`4.2.1.19`. On the menu bar, select ``Vector`` **(1)** → ``QuickOSM`` **(2)** → ``QuickOSM...`` **(3)**, and enter the ``Symbology`` tab:
+For the extraction of the OSM features follow the instruction in :numref:`4.2.1.19`. On the menu bar, select ``Vector`` **(1)** → ``QuickOSM`` **(2)** → ``QuickOSM...`` **(3)**, and enter the ``Symbology`` tab:
 
-   * Key: ``building`` **(4)**
-   * Value: ``yes`` **(5)**
-   * In: ``Layer Extent`` **(6)** → ``EMSR468_AOI05_DEL_PRODUCT_areaOfInterestA_r1_v1`` **(7)**
+* Key: ``building`` **(4)**
+* Value: ``yes`` **(5)**
+* In: ``Layer Extent`` **(6)** → ``EMSR468_AOI05_DEL_PRODUCT_areaOfInterestA_r1_v1`` **(7)**
 
 Here, we will open the ``Advanced`` **(8)** option to define a folder to store the data. Here, click on ``...`` **(9)** and select the location:
 
-   * Path: ``.\Chapter 4\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\QuickOSM_Buildings``
+* Path: ``.\Chapter 4\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\QuickOSM_Buildings``
 
 And proceed to ``Run query`` **(10)**. After the process is executed, the OSM features with the key-value pairs, building-yes, have been added to the map (See :numref:`4.2.1.20`).
 
@@ -406,7 +419,7 @@ And proceed to ``Run query`` **(10)**. After the process is executed, the OSM fe
 
    EMSR468 activation - QuickOSM building features.
 
-6. Build the hazard map by combining the layers and defining different symbologies
+6. Build the impact assessment map by combining the layers and defining different symbologies
 
 As stated previously, crucial asset for hazard mapping is the representation of information. In :numref:`4.2.1.21`, the layers symbology has been modified to provided a more intuitive layout with respect to the flood event. First by distinguishing the permanent water bodies with respect to the flood plain. Second, by providing contrasting colors to the buildings and population. Another point which can improve the layout of your map is to add transparency and overlay to the layers.
 
@@ -416,18 +429,153 @@ As stated previously, crucial asset for hazard mapping is the representation of 
 
    EMSR468 activation - Editing of the layers visualization.
 
-7. Prepare a map composition of the flood impact
-
-To set up your map composition, start by creating a new layout (see :numref:`4.2.1.22`). On the menu bar select ``File`` → ``New Print Layout...``. Give a name to your layout. 
+The flood mapping activities enable the identification of the affected infrastructure. Let us now target the buildings which have been affected by the flood.  First, provide the building layers attribute table with a field that states if they are within the flooded areas (see :numref:`4.2.1.23`). Open the attribute layer for the building layer and create a new field. Right-click on the layer **(1)** and select the ``Open Attribute Table`` **(2)**. ``Field Calculator`` **(3)** → ``Create new field`` **(4)** →  with an output field name ``impact`` **(5)** and output field type ``Text (string)`` **(6)** and an output field length of ``15`` **(7)**. Then, in the expression box assign the value ``'not affected'`` **(8)** which will be the default value in case the building is not inside the mapped flooded areas. At last, click on ``OK`` **(9)**. 
 
 .. _4.2.1.23:
 .. figure:: /img/4/4.2.1.23.png
    :align: center
 
-   EMSR468 activation - Layout for the hazard event.
+   Add a field to assign the impact categories to the building features.
+
+.. note::
+
+   Currently, the buildings layer editing mode is enabled. Beware of any modification of the layer because they will be saved once the editing mode is disabled. Be careful no to modify any of the contents of the table while the editing is active.
+
+It could be the case that in later scenarios the flood plain can extend in wider areas. Let us compose a scenario in which the flood extent is 50m larger with respect to this event. To build this scenario we will make use of the buffer tool (see :ref:`2.4.6. Geoprocessing tools for vector data: buffer <2.4.6>`). To make use of the buffer tool, first we need to set an appropriate cartographic representation for the flood extent layer to be able to carry out the offset of the layer (the buffer/offset units are linked to the CRS of the layer). For this reason, we need to reproject the layer into projected coordinate system. To reproject a layer into a different CRS (see :numref:`4.2.2.24`), select ``Vector`` **(1)** → ``Data Management Tools`` **(2)** → ``Reproject Layer …`` **(3)**. Here, the Input layer is ``EMSR468_AOI05_DEL_PRODUCT_observedEventA_r1_v1 EPSG:4326`` **(4)** and the target CRS is the ``Project CRS: EPSG:3857 – WGS 84 /Pseudo-Mercator`` **(5)** → ``Run`` **(6)**. The created layer will have the name Reprojected (see :numref:`4.2.2.25`).
+
+.. note::
+
+   When selecting a projection consider the purpose of your map. In case you would like to present a reference map of the globe, you may prefer to find a balance between shape and area distortions. On the other hand, if your map has a specific purpose you may prefer to avoid large distortions in shape or area. See section :ref:`1.2.1. Projections <1.2>`
 
 .. _4.2.1.24:
 .. figure:: /img/4/4.2.1.24.png
+   :align: center
+
+   Reproject the observed event layer.
+
+.. _4.2.1.25:
+.. figure:: /img/4/4.2.1.25.png
+   :align: center
+
+   Reprojected observed event layer, EPSG:3857.
+
+Let us save the temporary file of the reprojected layer. :numref:`4.2.2.26` present the steps for saving the new layer. Right-click on the layer named ``Reprojected`` **(1)** → ``Export`` **(2)** → ``Save Feature As …`` **(3)**. On the appearing window, select the format as ``ESRI Shapefile`` **(4)**. Define the path and name to the file ``.\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\Delineation Products\flood_scenario.shp`` **(5)**.  Set the Coordinate Reference System as ``EPSG:3857 – WGS84 / Pseudo-Mercator`` **(6)**. Click on ``OK``. The layer should be added directly into the project if the ``Add saved file to map`` is enabled (if not, add the layer from the location set at step **(5)**).
+
+.. _4.2.1.26:
+.. figure:: /img/4/4.2.1.26.png
+   :align: center
+
+   Save the temporary reprojected layer in the exercise working folders.
+
+.. note::
+
+   In some cases, the use of geoprocessing tools such as *"select by location"* (see section :ref:`2.4.2. Attribute table: selection, editing and field calculator. <2.4.2>`) can lead to the following error message(s): *"Feature (X) has invalid geometry"* and/or *"Execution failed after X.X seconds"*. To solve this, you may need to fix the geometry or change the Processing setting to the "Ignore invalid input features" option. To address this issue, create buffer of 0 m width for the flooded areas layer (later in the exercise we will create a 50m buffer). In this way we fixed the invalid geometry, and we will use ``flood_scenario_fixed`` layer for future selections (see :numref:`4.2.2.27`).
+
+The next step considers creating a buffer around the flooded area to fix some issues concerning the features included in the **Observed event** layer as shown in :numref:`4.2.2.27`. On the menu bar, select ``Vector`` **(1)** → ``Geoprocessing Tools`` **(2)** → ``Buffer`` **(3)**. In the new window, select ``flood_scenario`` as the input layer **(4)**. Assign an offset of the polygon of ``0`` **(5)** ``meters`` **(6)**. Define the output path file and name ``.\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\Delineation Products\flood_scenario_fixed.shp`` **(7)**. Activate the ``Enable output file after running algorithm``. Click on ``Run``.
+
+.. _4.2.1.27:
+.. figure:: /img/4/4.2.1.27.png
+   :align: center
+
+   Perform a 0m buffer around the flood event to correct possible feature errors.
+
+.. _4.2.1.28:
+.. figure:: /img/4/4.2.1.28.png
+   :align: center
+
+   “Fixed” flood extent, 0m buffer around the flood event to correct possible feature errors.
+
+Using the field created inside the building layer we can identify the buildings which have been affected by the flood intersecting the layers. Here, an approach is to select the features from one layer depending on another. On the menu bar, select ``Vector`` **(1)** → ``Research Tools`` **(2)** → ``Select by Location …`` **(3)**. In the “Select by Location” window, choose the options as follows:
+
+   * Select features from: ``building_ yes [EPSG:4326]`` **(4)**
+   * Where the features (geometric predicate): ``intersect`` **(5)**
+   * By comparing the features from: ``flood_scenario_fixed[EPSG:3857]`` **(6)**
+
+Having set the parameters, execute the function by clicking on ``Run`` **(7)**.
+
+.. _4.2.1.29:
+.. figure:: /img/4/4.2.1.29.png
+   :align: center
+
+   Select building features located within the flooded extent.
+
+Once selected the building laying inside of the flooded areas it is possible to provide a suitable value on the **impact** field of the ``building_yes`` layer. Open the ``building_yes`` attribute table. Notice that the selected features are highlighted in blue. Click on the ``Field Calculator`` icon **(1)**. Enable the option of ``Only update *n* selected features``  **(2)**. Check the ``Update existing field`` **(3)** option. Define the field to be modified ``impact`` **(4)**. Set the value to assign in the field at the expression box (here assign a string defined as ``'flooded'`` **(5)**). Click on ``OK`` to execute the operation **(6)**. After the changes have been applied you will notice the changes as presented in **(7)**. Notice that the attribute table remarks on the top of its window the number of selected features from the layer. In this case, we have that 7 building are located inside the observed event flood extent.
+
+.. _4.2.1.30:
+.. figure:: /img/4/4.2.1.30.png
+   :align: center
+
+   Assign the “flooded” impact category to the buildings within the observed flooded area.
+
+Next, we will replicate the steps to produce the ``flood_scenario_fixed`` layer, this time to make a 50 m buffer from the flooded area. In this case the buffer will model a scenario of a layer flood event. The scenario is going to indicate the buildings which could be in a flooded area. When the building in this specific scenario have been identified, the **impact** field on the building layer will take the value ``'possible flood'``. 
+
+Make a buffer of 50 meters around the flooded area following the steps presented in :numref:`4.2.1.31`. This new buffer will be named ``flood_scenario_50m``. The shapefile will be stored in the path and file name ``.\Copernicus_EMS_Exercise\study cases\EMSR468 - Flood Scenario\Delineation Products\flood_scenario_50m.shp``. :numref:`4.2.1.32` presents the output layer from the buffer.
+
+.. note::
+
+   It is important to remark that this is a simplified exercise to provide an alternative flood scenario. This scenario does not model the water flow inside the AOI in case of a flood event. Rigorous flood modelling consider the terrain geometry, land coverage, soil composition and other parameters.
+
+.. _4.2.1.31:
+.. figure:: /img/4/4.2.1.31.png
+   :align: center
+
+   Perform a 50m buffer that represents a larger flood extent scenario.
+
+.. _4.2.1.32:
+.. figure:: /img/4/4.2.1.32.png
+   :align: center
+
+   “possible flood” scenario, 50m buffer around the flood event.
+
+Now, it is possible to identify the buildings located inside the “possible flood” scenario. To do so, follow the steps presented in :numref:`4.2.1.33`.
+
+.. _4.2.1.33:
+.. figure:: /img/4/4.2.1.33.png
+   :align: center
+
+   Select building features located within the “possible flood” scenario flooded extent.
+
+Once the buildings located inside the “possible flood” scenario have been selected, proceed to open the attribute table for the ``building_yes`` layer and follow the steps on :numref:`4.2.1.34`. For this selected features a value of ``'possible flood'`` will be assigned to the impact category.
+
+.. _4.2.1.34:
+.. figure:: /img/4/4.2.1.34.png
+   :align: center
+
+   Assign the “flooded” impact category to the buildings within the observed flooded area.
+
+Until March 01st, 2021 there have been mapped a total of 27 buildings, from which 7 have been affected during the flood according to the delineation map and 844 building were nearby the flooded ares so they should be monitored.
+
+.. note::
+   The results may vary, consider that the OSM team is actively working on and improving their datasets.
+
+Now that we have assessed the impact on the buildings, we can provide a symbology based on the categories defined by the expected impact according to the defined scenarios.
+
+.. _4.2.1.35:
+.. figure:: /img/4/4.2.1.35.png
+   :align: center
+
+   Building features symbology based on the AOI.
+
+It is possible to assess the count of buildings inside an impact class by selecting the features using the impact field (see :numref:`4.2.1.36`).
+
+.. _4.2.1.36:
+.. figure:: /img/4/4.2.1.36.png
+   :align: center
+
+   Identify the buildings count by the impact field classification.
+
+7. Prepare a map composition of the flood impact
+
+To set up your map composition, start by creating a new layout (see :numref:`4.2.1.37`). On the menu bar select ``File`` → ``New Print Layout...``. Give a name to your layout. 
+
+.. _4.2.1.37:
+.. figure:: /img/4/4.2.1.37.png
+   :align: center
+
+   EMSR468 activation - Layout for the hazard event.
+
+.. _4.2.1.38:
+.. figure:: /img/4/4.2.1.38.png
    :align: center
 
    EMSR468 activation - Flood impact map.
@@ -490,20 +638,20 @@ Burn Severity values can vary from case to case, and so, if possible, interpreta
 .. table:: USGS burn severity ranges classification
    :align: center
 
-   +--------------------------+------------+-------+------------------------+
-   | USGS dNBR classification | HEX Color  | Color | Label                  |
-   | (Value <= dNBR)          |            |       | (Severity Level)       |
-   +==========================+============+=======+========================+
-   | -0.1                     | #29BD2E    |  ...  | Unburned               |
-   +--------------------------+------------+-------+------------------------+
-   | 0.27                     | #FFDE00    |  ...  | Low Severity           |
-   +--------------------------+------------+-------+------------------------+
-   | 0.44                     | #FF9100    |  ...  | Moderate-Low Severity  | 
-   +--------------------------+------------+-------+------------------------+
-   | 0.66                     | #E3003B    |  ...  | Moderate-High Severity |
-   +--------------------------+------------+-------+------------------------+
-   | 1.3                      | #9D00C4    |  ...  | High Severity          |
-   +--------------------------+------------+-------+------------------------+
+   +--------------------------+------------+------------------------+
+   | USGS dNBR classification | HEX Color  | Label                  |
+   | (Value <= dNBR)          |            | (Severity Level)       |
+   +==========================+============+========================+
+   | -0.1                     | #29BD2E    | Unburned               |
+   +--------------------------+------------+------------------------+
+   | 0.27                     | #FFDE00    | Low Severity           |
+   +--------------------------+------------+------------------------+
+   | 0.44                     | #FF9100    | Moderate-Low Severity  | 
+   +--------------------------+------------+------------------------+
+   | 0.66                     | #E3003B    | Moderate-High Severity |
+   +--------------------------+------------+------------------------+
+   | 1.3                      | #9D00C4    | High Severity          |
+   +--------------------------+------------+------------------------+
 
 .. warning::
 
@@ -579,21 +727,21 @@ Proceed to access the EOBrowser and Login with you user credentials.
 
 Once that you have accessed the Sentinel-Hub your credentials you will have access not only to visualizing the catalogue in the browser, but also to the possibility of downloading the datasets. Now, we can define the querying parameters for our datasets of interest for the pre- and post-event of the fire (see :numref:`4.2.2.7`):
    
-   * Use the search bar located at the top-right of you screen and search for ``Sarno, SA, Italia`` **(1)**. Alternatively, you can move within the map canvas if you are familiar with the location, or you can upload a KML or GEOJSON file with the area of interest to identify the AOI.
-   * Data Source: ``Sentinel-2`` **(2)**
+* Use the search bar located at the top-right of you screen and search for ``Sarno, SA, Italia`` **(1)**. Alternatively, you can move within the map canvas if you are familiar with the location, or you can upload a KML or GEOJSON file with the area of interest to identify the AOI.
+* Data Source: ``Sentinel-2`` **(2)**
 
-      *  ``Advanced Search`` → ``L2A (atmospherically corrected)`` **(3)**
-   * Time range:
+   *  ``Advanced Search`` → ``L2A (atmospherically corrected)`` **(3)**
+* Time range:
 
-      * Start Date:`` 2020-09-01`` **(4)**
-      * End Date:``2020-09-30`` **(5)**
+   * Start Date:`` 2020-09-01`` **(4)**
+   * End Date:``2020-09-30`` **(5)**
 
 After successfully defining the query parameters, click on the ``Search`` button **(6)**.
 
 .. _4.2.2.8:
 .. figure:: /img/4/4.2.2.8.png
    :align: center
-   
+
    --EOBrowser viewer. Available imagery fulfilling the parameters. EMSR394
 
 Then, you will find the different imagery available for the current map view, which are intersecting or enclosing it. Here, from the list of available imagery matching the query parameters select the one for ``2020-09-04`` by clicking on visualize (1) as seen in :numref:`4.2.2.8` for the pre-event imagery. 
@@ -613,7 +761,7 @@ Then, proceed to download the imagery by clicking on the ``Download`` button **(
 .. _4.2.2.9:
 .. figure:: /img/4/4.2.2.9.png
    :align: center
-   
+
    --EOBrowser viewer. Wildfire event area of interest data download.
 
 .. note::
@@ -625,7 +773,7 @@ Then, proceed to download the imagery by clicking on the ``Download`` button **(
 .. _4.2.2.10:
 .. figure:: /img/4/4.2.2.10.png
    :align: center
-   
+
    --EOBrowser viewer. Flood event pre- (2020-09-04) and post-event (2020-10-14) view.
 
 Now, for the post-event imagery in EOBrower, go back to the ``Discovery`` tab and select the imagery for ``2020-09-14`` by clicking in ``visualize``. Repeat the procedure as presented in :numref:`4.2.2.9` to download the post-event images.
@@ -746,7 +894,7 @@ Repeat the previous procedure to obtain the NBR for the post-event. Use the foll
 .. _4.2.2.15:
 .. figure:: /img/4/4.2.2.15.png
    :align: center
-    
+      
    --EMSR394 Fire Event in Campania Region. Pre- and post event imagery.
 
 With the two NBR estimates, before and after the event, it is possible to map the burnt area. Open the “Semi-Automatic Classification” plugin raster calculator, on the menu bar select ``SCP`` → ``Band Calc`` to arrive to the window shown in :numref:`4.2.2.16`. To highlight the burnt areas, write the expression:
@@ -934,9 +1082,3 @@ After following the steps as presented in :numref:`4.2.3.1`, you will find a web
    --Global Human Settlement Layer Population Tiles Web Viewer, https://ghsl.jrc.ec.europa.eu/ghs_pop2019.php
 
 .. [2] Schiavina, Marcello; Freire, Sergio; MacManus, Kytt (2019): GHS population grid multitemporal (1975, 1990, 2000, 2015) R2019A. European Commission, Joint Research Centre (JRC) DOI: 10.2905/42E8BE89-54FF-464E-BE7B-BF9E64DA5218 PID: http://data.europa.eu/89h/0c6b9751-a71f-4062-830b-43c9f432370f.
-
-Eventually this can become a single note or important comment to mention additional material.
-
-.. note::
-
-   Add the reference material for the lecture.

@@ -57,6 +57,8 @@ A similar procedure applies to linear features. Let us consider the layer of riv
 
 .. [1] If the QuickMapServices plugin is not installed, select from the top menu **Plugins → Manage and Install Plugins**, search for QuickMapsService and select **Install Plugin**.
 
+.. _2.4.2:
+
 Attribute table: selection, editing and field calculator
 --------------------------------------------------------
 
