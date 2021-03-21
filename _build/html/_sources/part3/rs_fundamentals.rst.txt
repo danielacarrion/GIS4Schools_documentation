@@ -99,8 +99,12 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 
 	Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).
 
+|br|
+
 .. hint:: **Small activity** |br|
 	See the real-time location of about 19,300 manmade objects orbiting the Earth with `ESRI Satellite Map <https://maps.esri.com/rc/sat2/index.html#>`_ (updated on 14 July 2020).
+
+|br|
 
 .. hint:: **Small activity** |br|
 	Search for a specific satellite with the `live real time satellite tracking and predictions <https://www.n2yo.com/>`_ (up to date).
@@ -137,11 +141,15 @@ We humans can see only the colours of the **VISIBLE** light. However, many other
 
 	The electromagnetic spectrum sensed by humans, cats and snakes.
 
+|br|
+
 .. _Fig6_SAT:
 .. figure:: /img/3/Fig6_SAT.png
 	:align: center
 
 	The electromagnetic spectrum sensed humans and bees.
+
+|br|
 
 .. hint:: **< Small activity >** |br|
 	See planet Earth live from the International Space Station with the `External High Definition Camera <https://www.n2yo.com/space-station/>`_ (real time streaming).
@@ -178,9 +186,13 @@ Multispectral cameras produce multispectral (=multiband) grayscale images. That 
 	
 	But satellites allow extending our visual perception to many more “colours”, even to wavelengths  where our eyes are blind!
 
+|br|
+
 .. hint:: **Small activity** |br|
 	To see the colour channels, try `RGB channels splitter <https://www.dcode.fr/rgb-channels>`_ with a photo taken with your smartphone (:numref:`Fig8_SAT`)! Try using both outputs "as greyscale", and "with their own colour". |br|
 	You might also use this `test picture <https://drive.google.com/file/d/1B5RIfx63mQq3O908Etstn5zeHTKBkPQu/view?usp=sharing>`_.
+
+|br|
 
 .. _Fig8_SAT:
 .. figure:: /img/3/Fig8_SAT.png
@@ -196,8 +208,12 @@ The combination of different greyscale spectral bands produces the colours of sa
 
 	Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.
 
+|br|
+
 .. hint:: **Small activity** |br|
 	Try the `Remote Sensing Virtual Lab <https://remotesensinglab.com/visualising.html>`_ to see how the land looks like in different wavelengths (cretits: Karen Joyce).
+
+|br|
 
 .. hint:: **Small activity** |br|
 	Try `Combine RGB channels <http://flaticon.sodhanalibrary.com/combine-rgb-chanels-online.html>`_ to combine greyscale satellite images into a satellite colour image:
@@ -379,6 +395,8 @@ The mission objectives for Sentinel-3 are global coverage of:
    F2    Thermal infrared 5     1 km                1,270 km     Surface temperature, active fires
    ====  =====================  ==================  ===========  ===============================================
 
+|br|
+
 .. hint:: `Look inside Sentinel-3 <http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission>`_
 
 .. raw:: html
@@ -418,6 +436,8 @@ The mission objective for Sentinel-5P is to provide daily global information on 
    7     Short-wave infrared 1           7 km x 7 km         2,670 km
    8     Short-wave infrared 2           7 km x 7 km         2,670 km
    ====  ==============================  ==================  ===========
+
+|br|
 
 .. hint:: **Small activity** |br|
 	See the benefits of the lockdown in China `on air quality <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/COVID-19_nitrogen_dioxide_over_China>`_
@@ -560,5 +580,6 @@ Overall, the service focuses on two main areas (and four systems):
 .. seealso:: For additional information, see the `Copernicus Emergency Management Service web site <https://emergency.copernicus.eu/>`_.
 
 |br|
+|br|
 
-(v.11.03.20-10.15)
+(v.2003211905)

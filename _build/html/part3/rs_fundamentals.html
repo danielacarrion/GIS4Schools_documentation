@@ -188,19 +188,20 @@
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html">3.2. Principles of image analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#the-spectral-signature">3.2.1. The spectral signature</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#what-is-a-spectral-signature">3.2.1.1. What is a spectral signature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-measure-spectral-signatures-with-satellites">3.2.1.2. How to measure spectral signatures with satellites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-compare-spectral-signatures">3.2.1.3. How to compare spectral signatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#land-cover-vs-land-use">3.2.1.2. Land cover vs land use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#spectral-signatures-of-the-main-macro-land-cover-classes">3.2.1.3. Spectral signatures of the main macro land cover classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-measure-spectral-signatures-with-satellites">3.2.1.4. How to measure spectral signatures with satellites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-compare-spectral-signatures">3.2.1.5. How to compare spectral signatures</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#id4">3.2.2. Spectral indices for environmental monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#spectral-indices-for-environmental-monitoring">3.2.2. Spectral indices for environmental monitoring</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#what-is-a-spectral-index">3.2.2.1. What is a spectral index</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-spectral-indices-are-designed">3.2.2.2. How spectral indices are designed</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#automatic-land-cover-mapping">3.2.3. Automatic land cover mapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#land-cover-maps-vs-land-use-maps">3.2.3.1. Land cover maps vs land use maps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">3.2.3.2. Supervised image classification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#classification-strategies">3.2.3.3. Classification strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">3.2.3.1. Supervised image classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#classification-strategies">3.2.3.2. Classification strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#map-validation">3.2.4. Map validation</a><ul>
@@ -448,11 +449,13 @@ This is a particular kind of Low Earth Orbit, where satellites circle from north
 <span id="fig1-sat"></span><img alt="../_images/Fig1_SAT.png" src="../_images/Fig1_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.3 </span><span class="caption-text">Satellite orbits (credit: adapted from Mark Mercer, 2011 - CC BY-SA 4.0).</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
 See the real-time location of about 19,300 manmade objects orbiting the Earth with <a class="reference external" href="https://maps.esri.com/rc/sat2/index.html#" rel="noopener noreferrer" target="_blank">ESRI Satellite Map</a> (updated on 14 July 2020).</p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
@@ -481,10 +484,12 @@ We humans can see only the colours of the <strong>VISIBLE</strong> light. Howeve
 <span id="fig5-sat"></span><img alt="../_images/Fig5_SAT.png" src="../_images/Fig5_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.6 </span><span class="caption-text">The electromagnetic spectrum sensed by humans, cats and snakes.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="figure align-center" id="id17">
 <span id="fig6-sat"></span><img alt="../_images/Fig6_SAT.png" src="../_images/Fig6_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.7 </span><span class="caption-text">The electromagnetic spectrum sensed humans and bees.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>&lt; Small activity &gt;</strong> <br />
@@ -516,12 +521,14 @@ A smartphone takes pictures in only 3 VISIBLE colour channels:</p>
 </ul>
 <p class="last">But satellites allow extending our visual perception to many more “colours”, even to wavelengths  where our eyes are blind!</p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
 To see the colour channels, try <a class="reference external" href="https://www.dcode.fr/rgb-channels" rel="noopener noreferrer" target="_blank">RGB channels splitter</a> with a photo taken with your smartphone (<a class="reference internal" href="#fig8-sat"><span class="std std-numref">Fig. 3.1.2.10</span></a>)! Try using both outputs “as greyscale”, and “with their own colour”. <br />
 You might also use this <a class="reference external" href="https://drive.google.com/file/d/1B5RIfx63mQq3O908Etstn5zeHTKBkPQu/view?usp=sharing" rel="noopener noreferrer" target="_blank">test picture</a>.</p>
 </div>
+<p><br /></p>
 <div class="figure align-center" id="id20">
 <span id="fig8-sat"></span><img alt="../_images/Fig8_SAT.png" src="../_images/Fig8_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.10 </span><span class="caption-text">Colour channels splitter.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
@@ -531,11 +538,13 @@ You might also use this <a class="reference external" href="https://drive.google
 <span id="fig-venezia-sat"></span><img alt="../_images/Fig_Venezia_SAT.png" src="../_images/Fig_Venezia_SAT.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.2.11 </span><span class="caption-text">Satellite colour image of Venice (Italy). Contains Copernicus Sentinel data.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
 Try the <a class="reference external" href="https://remotesensinglab.com/visualising.html" rel="noopener noreferrer" target="_blank">Remote Sensing Virtual Lab</a> to see how the land looks like in different wavelengths (cretits: Karen Joyce).</p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p><strong>Small activity</strong> <br />
@@ -969,6 +978,7 @@ The <em>Sea and Land Surface Temperature Radiometer (SLSTR)</em> instrument reco
 </tr>
 </tbody>
 </table>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><a class="reference external" href="http://www.esa.int/ESA_Multimedia/Videos/2016/01/A_multitalented_mission" rel="noopener noreferrer" target="_blank">Look inside Sentinel-3</a></p>
@@ -1048,6 +1058,7 @@ Sentinel-5P is the precursor mission of Sentinel-5 and provides <strong>multispe
 </tr>
 </tbody>
 </table>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last"><strong>Small activity</strong> <br />
@@ -1200,8 +1211,9 @@ See the Copernicus Emergency Management system for <a class="reference external"
 <p class="first admonition-title">See also</p>
 <p class="last">For additional information, see the <a class="reference external" href="https://emergency.copernicus.eu/" rel="noopener noreferrer" target="_blank">Copernicus Emergency Management Service web site</a>.</p>
 </div>
-<p><br /></p>
-<p>(v.11.03.20-10.15)</p>
+<p><br />
+<br /></p>
+<p>(v.2003211905)</p>
 </div>
 </div>
 </div>

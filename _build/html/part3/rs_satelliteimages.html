@@ -188,19 +188,20 @@
 <li class="toctree-l2"><a class="reference internal" href="rs_imageanalysis.html">3.2. Principles of image analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#the-spectral-signature">3.2.1. The spectral signature</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#what-is-a-spectral-signature">3.2.1.1. What is a spectral signature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-measure-spectral-signatures-with-satellites">3.2.1.2. How to measure spectral signatures with satellites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-compare-spectral-signatures">3.2.1.3. How to compare spectral signatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#land-cover-vs-land-use">3.2.1.2. Land cover vs land use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#spectral-signatures-of-the-main-macro-land-cover-classes">3.2.1.3. Spectral signatures of the main macro land cover classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-measure-spectral-signatures-with-satellites">3.2.1.4. How to measure spectral signatures with satellites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-to-compare-spectral-signatures">3.2.1.5. How to compare spectral signatures</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#id4">3.2.2. Spectral indices for environmental monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#spectral-indices-for-environmental-monitoring">3.2.2. Spectral indices for environmental monitoring</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#what-is-a-spectral-index">3.2.2.1. What is a spectral index</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#how-spectral-indices-are-designed">3.2.2.2. How spectral indices are designed</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#automatic-land-cover-mapping">3.2.3. Automatic land cover mapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#land-cover-maps-vs-land-use-maps">3.2.3.1. Land cover maps vs land use maps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">3.2.3.2. Supervised image classification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#classification-strategies">3.2.3.3. Classification strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#supervised-image-classification">3.2.3.1. Supervised image classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rs_imageanalysis.html#classification-strategies">3.2.3.2. Classification strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="rs_imageanalysis.html#map-validation">3.2.4. Map validation</a><ul>
@@ -387,6 +388,7 @@ Before browsing the image archives, sign up for a <a class="reference external" 
 <span id="fig1-eobrowser"></span><img alt="../_images/Fig1_EObrowser.png" src="../_images/Fig1_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.1 </span><span class="caption-text">Home page of the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="figure align-center" id="id16">
 <span id="fig2-eobrowser"></span><img alt="../_images/Fig2_EObrowser.png" src="../_images/Fig2_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.2 </span><span class="caption-text">Log in to the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
@@ -407,6 +409,7 @@ Before browsing the image archives, sign up for a <a class="reference external" 
 <span id="fig3-eobrowser"></span><img alt="../_images/Fig3_EObrowser-2.png" src="../_images/Fig3_EObrowser-2.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.3 </span><span class="caption-text">Set the searching criteria.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last"><strong>Remember to use ONLY atmospherically corrected images!</strong> <br />
@@ -423,11 +426,7 @@ Sentinel-2 data provided as <code class="docutils literal notranslate"><span cla
 <span id="fig6-eobrowser"></span><img alt="../_images/Fig6_EObrowser-2.png" src="../_images/Fig6_EObrowser-2.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.4 </span><span class="caption-text">Select your satellite image archived in the Sentinel Hub EO Browser.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
-<p>By default, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> opens a <em>true colour image</em> of the selected area (<a class="reference internal" href="#fig7-eobrowser"><span class="std std-numref">Fig. 3.3.1.5</span></a>). For <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2" rel="noopener noreferrer" target="_blank">Sentinel-2</a>, the Red, Green and Blue colours are recorded by spectral band 4, band 3, and band 2. Therefore, the Earth’s surface is shown as humans would see it naturally.</p>
-<div class="figure align-center" id="id19">
-<span id="fig7-eobrowser"></span><img alt="../_images/Fig7_EObrowser.png" src="../_images/Fig7_EObrowser.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1.5 </span><span class="caption-text">The satellite image(s) are displayed.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
-</div>
+<p>By default, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> opens a <strong>true colour</strong> image of the selected area (<a class="reference internal" href="#fig7-eobrowser"><span class="std std-numref">Fig. 3.3.1.5</span></a>). For <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2" rel="noopener noreferrer" target="_blank">Sentinel-2</a>, the Red, Green and Blue colours are recorded by spectral band 4, band 3, and band 2. Therefore, the Earth’s surface is shown as humans would see it naturally.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>True colour synthesis:</strong> <br />
@@ -435,25 +434,21 @@ Satellite Red band → Image Red colour channel <br />
 Satellite Green band → Image Green colour channel <br />
 Satellite Blue band → Image Blue colour channel</p>
 </div>
+<div class="figure align-center" id="id19">
+<span id="fig7-eobrowser"></span><img alt="../_images/Fig7_EObrowser.png" src="../_images/Fig7_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3.1.5 </span><span class="caption-text">The satellite image(s) are displayed.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
 <p>However, <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> shows the following additional pre-built colour composites:</p>
-<ul>
-<li><p class="first"><strong>False colour</strong> (<a class="reference internal" href="#fig8-eobrowser"><span class="std std-numref">Fig. 3.3.1.6</span></a>). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), Red, and Green spectral bands, represented as Red, Green and Blue colours respectively:</p>
-<blockquote>
-<div><ul class="simple">
+<p><strong>a. False colour</strong> (<a class="reference internal" href="#fig8-eobrowser"><span class="std std-numref">Fig. 3.3.1.6</span></a>). This is the well-know colour composite used to evaluate vegetation biomass and health. It uses the near infrared (NIR), Red, and Green spectral bands, represented as Red, Green and Blue colours respectively:</p>
+<ul class="simple">
 <li>Vegetation is from dark red to light red,</li>
 <li>Urban areas are cyan or tan,</li>
 <li>Bare soils are from dark brown to light brown,</li>
 <li>Water is black or dark blue,</li>
 <li>Snow and ice are cyan or blue,</li>
+<li>Clouds are white,</li>
 <li>Wildfires are white (the smoke plume).</li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-center" id="id20">
-<span id="fig8-eobrowser"></span><img alt="../_images/Fig8_EObrowser.png" src="../_images/Fig8_EObrowser.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1.6 </span><span class="caption-text">False colour composite.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>False colour synthesis:</strong> <br />
@@ -461,23 +456,21 @@ Satellite NIR band → Image Red colour channel <br />
 Satellite Red band → Image Green colour channel <br />
 Satellite Green band → Image Blue colour channel</p>
 </div>
-<ul>
-<li><p class="first"><strong>False colour (urban)</strong> (<a class="reference internal" href="#fig15-eobrowser"><span class="std std-numref">Fig. 3.3.1.7</span></a>). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the Red spectral bands, represented as Red, Green and Blue colours respectively:</p>
-<blockquote>
-<div><ul class="simple">
+<div class="figure align-center" id="id20">
+<span id="fig8-eobrowser"></span><img alt="../_images/Fig8_EObrowser.png" src="../_images/Fig8_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3.1.6 </span><span class="caption-text">False colour composite.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p><br /></p>
+<p><strong>b. False colour (urban)</strong> (<a class="reference internal" href="#fig15-eobrowser"><span class="std std-numref">Fig. 3.3.1.7</span></a>). This colour composite is used to highlight details in the urbanized areas more clearly and spot wildfires. It uses two shortwave infrared (SWIR) spectral bands and the Red spectral bands, represented as Red, Green and Blue colours respectively:</p>
+<ul class="simple">
 <li>Vegetation is green,</li>
 <li>Urban areas are white, grey, or purple,</li>
 <li>Bare soils are shown in a variety of colours,</li>
 <li>Water is black or dark blue,</li>
-<li>Wildfires are red and yellow.</li>
+<li>Snow and ice are blue,</li>
+<li>Wildfires are red and yellow,</li>
+<li>Clouds qre white.</li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-center" id="id21">
-<span id="fig15-eobrowser"></span><img alt="../_images/Fig15_EObrowser.png" src="../_images/Fig15_EObrowser.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1.7 </span><span class="caption-text">False colour (urban) composite.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>False colour (urban) synthesis:</strong> <br />
@@ -485,24 +478,21 @@ Satellite SWIR band 1 → Image Red colour channel <br />
 Satellite SWIR band 2 → Image Green colour channel <br />
 Satellite Red band → Image Blue colour channel</p>
 </div>
-<ul>
-<li><p class="first"><strong>SWIR</strong> (<a class="reference internal" href="#fig16-eobrowser"><span class="std std-numref">Fig. 3.3.1.8</span></a>). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Vegetation is red,</li>
-<li>Urban areas are cyan,</li>
+<div class="figure align-center" id="id21">
+<span id="fig15-eobrowser"></span><img alt="../_images/Fig15_EObrowser.png" src="../_images/Fig15_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3.1.7 </span><span class="caption-text">False colour (urban) composite.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p><br /></p>
+<p><strong>c. SWIR</strong> (<a class="reference internal" href="#fig16-eobrowser"><span class="std std-numref">Fig. 3.3.1.8</span></a>). This colour composite is used to distinguish between clouds, snow, and ice. Besides, it is useful for geological mapping. It uses a shortwave infrared (SWIR), a near infrared (NIR) and the red spectral bands, represented as red, green and blue colours respectively:</p>
+<ul class="simple">
+<li>Vegetation is green,</li>
+<li>Urban areas are brown,</li>
 <li>Bare soils are from dark brown to light brown,</li>
 <li>Water is black or dark blue,</li>
 <li>Snow and ice are blue,</li>
+<li>Clouds are white,</li>
 <li>Rocks are shown in a variety of colours.</li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-center" id="id22">
-<span id="fig16-eobrowser"></span><img alt="../_images/Fig16_EObrowser.png" src="../_images/Fig16_EObrowser.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1.8 </span><span class="caption-text">Shortwave infrared (SWIR) composite.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>SWIR colour synthesis:</strong> <br />
@@ -510,79 +500,94 @@ Satellite SWIR band → Image Red colour channel <br />
 Satellite NIR band → Image Green colour channel <br />
 Satellite Red band → Image Blue colour channel</p>
 </div>
+<div class="figure align-center" id="id22">
+<span id="fig16-eobrowser"></span><img alt="../_images/Fig16_EObrowser.png" src="../_images/Fig16_EObrowser.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3.1.8 </span><span class="caption-text">Shortwave infrared (SWIR) composite.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p><br /></p>
 <p><a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> also shows the maps of some basic spectral indices. These parameters are useful to recognize different land cover types and monitor the status of vegetated land. Specifically:</p>
-<ul>
-<li><p class="first"><strong>NDVI</strong> (<a class="reference internal" href="#fig9-eobrowser"><span class="std std-numref">Fig. 3.3.1.9</span></a>). The <em>Normalized Difference Vegetation Index (NDVI)</em> is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Dense and healthy vegetation is dark green,</li>
-<li>Sparse or unhealthy vegetation is light green.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
+<p><strong>a. NDVI</strong> (<a class="reference internal" href="#fig9-eobrowser"><span class="std std-numref">Fig. 3.3.1.9</span></a>). The <em>Normalized Difference Vegetation Index (NDVI)</em> is the basic greenness vegetation index used to estimate biomass and health of the green vegetation. The index is calculated using a combination of the near infrared (NIR) and red spectral bands (see <a class="reference internal" href="rs_imageanalysis.html#normalized-difference-vegetation-index"><span class="std std-ref">Normalized Difference Vegetation Index (NDVI)</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}\]</div>
 <div class="figure align-center" id="id23">
 <span id="fig9-eobrowser"></span><img alt="../_images/Fig9_EObrowser.png" src="../_images/Fig9_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.9 </span><span class="caption-text">Map of the Normalized Difference Vegetation Index (NDVI).</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
-<ul>
-<li><p class="first"><strong>Moisture index</strong> (<a class="reference internal" href="#fig17-eobrowser"><span class="std std-numref">Fig. 3.3.1.10</span></a>). The <em>Normalized Difference Moisture Index (NDMI)</em> is used to estimate vegetation water content and monitor droughts. The index is calculated using a combination of the near infrared (NIR) and shortwave infrared (SWIR) spectral bands:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Vegetation (on land) without water stress is dark blue.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
+<p><br /></p>
+<p><strong>b. Moisture index</strong> (<a class="reference internal" href="#fig17-eobrowser"><span class="std std-numref">Fig. 3.3.1.10</span></a>). The <em>Normalized Difference Moisture Index (NDMI)</em> is used to estimate vegetation water content and monitor droughts. The index is calculated using a combination of the near infrared (NIR) and shortwave infrared (SWIR) spectral bands:</p>
 <div class="math notranslate nohighlight">
 \[NDMI=\frac{\rho_{NIR}-\rho_{SWIR}}{\rho_{NIR}+\rho_{SWIR}}\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Normalized Difference Moisture Index (NDMI) is also referred as Normalized Difference Water Index (NDWI) (see <a class="reference internal" href="rs_imageanalysis.html#normalized-difference-water-index2"><span class="std std-ref">Normalized Difference Water Index (NDWI)</span></a>).</p>
+</div>
 <div class="figure align-center" id="id24">
 <span id="fig17-eobrowser"></span><img alt="../_images/Fig17_EObrowser.png" src="../_images/Fig17_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.10 </span><span class="caption-text">Map of the Normalized Difference Moisture Index (NDMI).</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
-<ul>
-<li><p class="first"><strong>NDWI</strong> (<a class="reference internal" href="#fig18-eobrowser"><span class="std std-numref">Fig. 3.3.1.11</span></a>). The <em>Normalized Difference Water Index (NDWI)</em> is used to map water bodies. The index is calculated using a combination of the near infrared (NIR) and green spectral bands:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Water bodies are blue.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
+<p><br /></p>
+<p><strong>c. NDWI</strong> (<a class="reference internal" href="#fig18-eobrowser"><span class="std std-numref">Fig. 3.3.1.11</span></a>). The <em>Normalized Difference Water Index (NDWI)</em> is used to map water bodies. The index is calculated using a combination of the near infrared (NIR) and green spectral bands (see <a class="reference internal" href="rs_imageanalysis.html#normalized-difference-water-index1"><span class="std std-ref">Normalized Difference Water Index (NDWI)</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[NDWI=\frac{\rho_{Green}-\rho_{NIR}}{\rho_{Green}+\rho_{NIR}}\]</div>
 <div class="figure align-center" id="id25">
 <span id="fig18-eobrowser"></span><img alt="../_images/Fig18_EObrowser.png" src="../_images/Fig18_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.11 </span><span class="caption-text">Map of the Normalized Difference Water Index (NDWI).</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
-<ul>
-<li><p class="first"><strong>NDSI</strong> (<a class="reference internal" href="#fig19-eobrowser"><span class="std std-numref">Fig. 3.3.1.12</span></a>). The <em>Normalised Difference Snow Index (NDSI)</em> is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Clouds are white,</li>
-<li>Snow (and water) is light blue.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
+<p><br /></p>
+<p><strong>d. NDSI</strong> (<a class="reference internal" href="#fig19-eobrowser"><span class="std std-numref">Fig. 3.3.1.12</span></a>). The <em>Normalised Difference Snow Index (NDSI)</em> is used to map clouds and snow. The index is calculated using a combination of the shortwave infrared (SWIR) and green spectral bands (see <a class="reference internal" href="rs_imageanalysis.html#normalized-difference-snow-index"><span class="std std-ref">Normalized Difference Snow Index (NDSI)</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[NDSI=\frac{\rho_{Green}-\rho_{SWIR}}{\rho_{Green}+\rho_{SWIR}}\]</div>
 <div class="figure align-center" id="id26">
 <span id="fig19-eobrowser"></span><img alt="../_images/Fig19_EObrowser.png" src="../_images/Fig19_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.12 </span><span class="caption-text">Map of the Normalised Difference Snow Index (NDSI).</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
-<div class="math notranslate nohighlight">
-\[NDSI=\frac{\rho_{Green}-\rho_{SWIR}}{\rho_{Green}+\rho_{SWIR}}\]</div>
-<p>Additionally, there is a simple scene classification map with 9 land cover classes (<a class="reference internal" href="#fig10-eobrowser"><span class="std std-numref">Fig. 3.3.1.13</span></a>).</p>
+<p><br /></p>
+<p>Additionally, there is a simple scene classification map with the following classes (<a class="reference internal" href="#fig10-eobrowser"><span class="std std-numref">Fig. 3.3.1.13</span></a>):</p>
+<ul>
+<li><p class="first">Vegetation,</p>
+</li>
+<li><p class="first">Not-vegetated,</p>
+</li>
+<li><p class="first">Water,</p>
+</li>
+<li><p class="first">Snow or ice,</p>
+</li>
+<li><p class="first">Clouds</p>
+<blockquote>
+<div><ul class="simple">
+<li>(medium probability of) Cloud,</li>
+<li>(high probability of) Cloud,</li>
+<li>Thin cirrus (i.e. cloud),</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Shadows</p>
+<blockquote>
+<div><ul class="simple">
+<li>Dark features and shadows,</li>
+<li>Cloud shadows,</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Missing data</p>
+<blockquote>
+<div><ul class="simple">
+<li>No data,</li>
+<li>Saturated or defective pixel.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
 <div class="figure align-center" id="id27">
 <span id="fig10-eobrowser"></span><img alt="../_images/Fig10_EObrowser.png" src="../_images/Fig10_EObrowser.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3.1.13 </span><span class="caption-text">Scene classification map.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
+<p><br /></p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p class="last"><strong>Looking for a specific spectral index?</strong> <br />
-The <a class="reference external" href="https://www.indexdatabase.de/" rel="noopener noreferrer" target="_blank">Index DataBase</a> is a collection of spectral indices for different applications and sensors. Here you find a selection of <a class="reference external" href="https://www.indexdatabase.de/db/is.php?sensor_id=96" rel="noopener noreferrer" target="_blank">250 spectral indices designed to fit the images of the Sentinel-2 satellite</a>. <br />
-If you like to import these spectral indices into Sentinel Hub EO Browser, try these <a class="reference external" href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/" rel="noopener noreferrer" target="_blank">javascript</a>.</p>
+<p><strong>Looking for a specific spectral index?</strong> <br />
+The <a class="reference external" href="https://www.indexdatabase.de/" rel="noopener noreferrer" target="_blank">Index DataBase</a> is a collection of spectral indices for different applications and sensors. Here you find a selection of <a class="reference external" href="https://www.indexdatabase.de/db/is.php?sensor_id=96" rel="noopener noreferrer" target="_blank">250 spectral indices designed to fit the images of the Sentinel-2 satellite</a>. <br /></p>
+<p class="last"><strong>If you like to import these spectral indices into Sentinel Hub EO Browser, try these</strong> <a class="reference external" href="https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/" rel="noopener noreferrer" target="_blank">javascripts</a>.</p>
 </div>
 <p><br /></p>
 </div>
@@ -593,6 +598,7 @@ If you like to import these spectral indices into Sentinel Hub EO Browser, try t
 <p class="last"><strong>Sign up for Copernicus Open Access Hub.</strong> <br />
 The images searched with <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> are downloaded from the <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>. <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Sign up for a free account!</a></p>
 </div>
+<p><br /></p>
 <ol class="arabic simple">
 <li>Click the green chain symbol to show the download link at the bottom of the image (<span class="guilabel">SciHub link:</span>),</li>
 <li>Click the link to download the data.</li>
@@ -608,6 +614,7 @@ The images searched with <a class="reference external" href="https://www.sentine
 <p class="first admonition-title">Caution</p>
 <p class="last">Username &amp; password for <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser</a> are different from that of <a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home" rel="noopener noreferrer" target="_blank">Copernicus Open Access Hub</a>!</p>
 </div>
+<p><br /></p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">For additional information, see the <a class="reference external" href="https://www.sentinel-hub.com/explore/eobrowser/user-guide/" rel="noopener noreferrer" target="_blank">Sentinel Hub EO Browser user guide</a></p>
@@ -639,8 +646,9 @@ Discover more information on the <a class="reference external" href="https://sci
 <p class="first admonition-title">Caution</p>
 <p class="last">Sentinel images could also be downloaded from the US repositories <a class="reference external" href="https://earthexplorer.usgs.gov/" rel="noopener noreferrer" target="_blank">EarthExplorer</a> and <a class="reference external" href="https://glovis.usgs.gov/app?fullscreen=0" rel="noopener noreferrer" target="_blank">GloVis</a>. However, this repository mirrors only <code class="docutils literal notranslate"><span class="pre">L1C</span></code> products (i.e. images which are NOT atmospherically corrected)!</p>
 </div>
-<p><br /></p>
-<p>(v.11.03.20-10.15)</p>
+<p><br />
+<br /></p>
+<p>(v.2103211807)</p>
 </div>
 </div>
 

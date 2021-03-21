@@ -3,8 +3,6 @@
 Principles of image analysis 
 =============================
 
-.. _3.2.1:
-
 The spectral signature
 -----------------------
 
@@ -23,9 +21,47 @@ Since each material has a unique spectral signature (like a fingerprint), that m
 - If we know the object material, we can use its spectral signature to monitor health status or degradation (for more details see :ref:`Spectral-indices-for-environmental-monitoring`. For exercises see :ref:`Monitoring-lake-trophic-state` and :ref:`Monitoring-crops-vegetative-stage`),
 - If we don’t know the object material, we can use its spectral signature for its identification (for more details see :ref:`Automatic-land-cover-mapping`. For exercises see :ref:`Mapping-crop-types`).
 
-.. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of their spectral signatures is the principles of multispectral Earth observation.**
+|br|
 
-When studying the Earth’s ecosystems, we are interested in monitoring our planet’s changes. :numref:`Fig1_signature` shows the distribution of the main land covers on Earth.
+Land cover vs land use
+````````````````````````
+Land cover describes the information on different **physical coverage of the Earth’s surface.** |br|
+Example of land cover classes are:
+
+- Farmlands,
+- Glaciers,
+- Urban areas,
+- Forests,
+- Lakes.
+
+*A very efficient method to determine the land cover is analysing satellite images.*
+
+On the other hand, land use describes **how people use the land and which activities people do in a specific land cover type.** |br|
+Some examples of land use classes are:
+
+- Recreational,
+- Residential,
+- Commercial,
+- Industrial.
+
+:numref:`Fig1_Maps` shows the difference between land cover and land use.
+
+.. _Fig1_Maps:
+.. figure:: /img/3/Fig1_Maps.png
+	:align: center
+
+	Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).
+
+|br|
+
+.. warning:: Remote sensing systems can provide information only on the physical coverage. Thus **land use CANNOT be determined by analysing satellite images.**
+
+|br|
+
+Spectral signatures of the main macro land cover classes
+`````````````````````````````````````````````````````````
+
+When studying the Earth’s ecosystems, we are interested in monitoring our planet’s changes. :numref:`Fig1_signature` shows the distribution of the main macro land covers on Earth.
 
 .. _Fig1_signature:
 .. figure:: /img/3/Fig1_signature.png
@@ -34,7 +70,7 @@ When studying the Earth’s ecosystems, we are interested in monitoring our plan
 	Distribution of main land covers on Earth.
 
 Thus, we use satellites to study how such land covers’ spectral signatures change in time. |br|
-:numref:`Fig2_signature` - :numref:`Fig7_signature` show the typical spectral signatures of the main land covers.
+:numref:`Fig2_signature` - :numref:`Fig7_signature` show the typical spectral signatures of the main macro land covers.
 
 .. _Fig2_signature:
 .. figure:: /img/3/Fig2_signature.png
@@ -42,11 +78,15 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 	Typical spectral signature of clear water (open Ocean).
 
+|br|
+
 .. _Fig3_signature:
 .. figure:: /img/3/Fig3_signature.png
 	:align: center
 
 	Typical spectral signatures of snow and ice.
+
+|br|
 
 .. _Fig4_signature:
 .. figure:: /img/3/Fig4_signature.png
@@ -54,11 +94,15 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 	Typical spectral signature of clouds.
 
+|br|
+
 .. _Fig5_signature:
 .. figure:: /img/3/Fig5_signature.png
 	:align: center
 
 	Typical spectral signature of bare soil (unvegetated).
+
+|br|
 
 .. _Fig6_signature:
 .. figure:: /img/3/Fig6_signature.png
@@ -66,11 +110,19 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 	Typical spectral signature of healthy vegetation.
 
+|br|
+
 .. _Fig7_signature:
 .. figure:: /img/3/Fig7_signature.png
 	:align: center
 
 	Typical spectral signatures of clear water (open Ocean) and polluted water (coastal water with chlorophyll content).
+
+|br|
+
+.. note:: **The acquisition of images in the VISIBLE, NEAR INFRARED, and SHORT-WAVE INFRARED spectral bands and the analysis of their spectral signatures is the principles of multispectral Earth observation.**
+
+|br|
 
 .. hint:: **Small activity** |br|
 	Try the `Remote Sensing Virtual Lab <https://remotesensinglab.com/measuring.html>`_ to see the spectral signatures of the land covers (cretits: Karen Joyce).
@@ -79,12 +131,12 @@ Thus, we use satellites to study how such land covers’ spectral signatures cha
 
 How to measure spectral signatures with satellites
 ````````````````````````````````````````````````````
-Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (:ref:`Spectral-characteristics`).
+Remember that satellites record the surface reflectance in different spectral bands and produce multiband grayscale images (see :ref:`Spectral-characteristics`).
 
 Thus, if we look at a single image pixel and plot its values stored in all the multiband image’s spectral bands, **we approximate its continuous spectral signature with a polyline** *(a line made of segments)*. :numref:`Fig8_signature` shows an example.
 
 .. _Fig8_signature:
-.. figure:: /img/3/Fig8_signature.png
+.. figure:: /img/3/Fig8tris_signature.png
 	:align: center
 
 	How to calculate the spectral signature with satellite images.
@@ -99,21 +151,34 @@ Thus, if we look at a single image pixel and plot its values stored in all the m
 How to compare spectral signatures
 ````````````````````````````````````
 Spectral signatures are curves that describe the variation of reflectance with wavelengths (see :ref:`What-is-a-spectral-signature`). The closer the curves are, the more they are similar. |br|
-Unfortunately, it is difficult to calculate the “distance” between curves.
 
-Let’s build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called **feature space** and has **ONE AXIS FOR EACH SPECTRAL BAND**. |br|
-In the feature space, the spectral signatures become points (:numref:`Fig8bis_signature`).
+Suppose to analyse a multispectral satellite image with 3 spectral bands: Band 2, Band 3, and Band 4 shown in :numref:`Fig8_signature`. And suppose to collect on the image some pixels of water, sand and vegetation (:numref:`Fig8bis1_signature`).
 
-.. _Fig8bis_signature:
-.. figure:: /img/3/Fig8bis_signature.png
+.. _Fig8bis1_signature:
+.. figure:: /img/3/Fig8bis1_signature.png
 	:align: center
 
-	Top: Multispectral satellite image. Centre: spectral signatures extracted from the satellite image. Bottom: spectral signatures plotted in the feature space.
+	Top: Multispectral satellite image. Bottom: spectral signatures extracted from the satellite image.
+
+How much are “similar” the water, sand and vegetation spectral signatures? |br|
+Unfortunately, it is hard to tell how much they are “close”!
+
+Let’s now build a reference system made of orthogonal axes that reproduce reflectances in each spectral band. This reference system is called **feature space** and has **ONE AXIS FOR EACH SPECTRAL BAND**.
+
+.. note:: **In the feature space, the spectral signatures become points** (:numref:`Fig8bis2_signature`).
+
+|br|
+
+.. _Fig8bis2_signature:
+.. figure:: /img/3/Fig8bis2_signature.png
+	:align: center
+
+	Spectral signatures plotted in the feature space.
 
 Now, it is simple to calculate the spectarl signatures' **similarity**: the closer the points are, the more they are similar. |br|
-The *Euclidean distance* is often used. Equation :eq:`eqSIG1` shows the formula for two points (1 and 2) in 3-D feature space:
+The *Euclidean distance D* is often used. Equation :eq:`eqSIG1` shows the formula for two points (1 and 2) in 3-D feature space:
 
-.. math:: \sqrt{\left|x_2-x_1\right|^2+\left|y_2-y_1\right|^2+\left|z_2-z_1\right|^2}
+.. math:: D=\sqrt{\left|x_2-x_1\right|^2+\left|y_2-y_1\right|^2+\left|z_2-z_1\right|^2}
    :label: eqSIG1
 
 where: |br|
@@ -135,8 +200,6 @@ z is the axis for spectral band 3.
 |br|
 
 .. _Spectral-indices-for-environmental-monitoring:
-
-.. _3.2.2:
 
 Spectral indices for environmental monitoring
 ----------------------------------------------
@@ -174,13 +237,11 @@ The most popular spectral indices are those to retrieve the status of vegetation
 
 .. _Examples-of-spectral-indices-for-studying-vegetation:
 
-.. _3.2.2.2:
-
 How spectral indices are designed 
 ````````````````````````````````````
 Every land feature reflects the sunlight differently (the spectral signature), depending on their physical state, chemical composition, moisture content, state of alteration (e.g. weathering) or health (for vegetation). Besides, any variation of these parameters produces a corresponding modification in the spectral signature.
 
-Let's see some examples for **VEGETATION**.
+Let's see some examples for **VEGETATION.**
 
 Look at the spectral signature of a vegetated image pixel (:numref:`Fig1_SI`). |br|
 The gap between the low reflectance in the Red band (due to chlorophylls), and the high reflectance in the NIR band (due to internal leaf structure) is an indicator of the greenness of the biosphere.
@@ -193,7 +254,7 @@ The gap between the low reflectance in the Red band (due to chlorophylls), and t
 
 In the example of :numref:`Fig1_SI`, we have  :math:`\rho_{Red}=0.05` and :math:`\rho_{NIR}=0.55`.
 
-Moreover, the more vigour the vegetation is **OR** the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and Red reflectances is used as a proxy for *overall "amount and health" of green vegetation*.
+Moreover, the more vigour the vegetation is **OR** the more green biomass is present, the larger this gap is (:numref:`Fig2_SI`). Thus, the difference between NIR and Red reflectances is used as a proxy for *overall "amount and health" of green vegetation.*
 
 .. _Fig2_SI:
 .. figure:: /img/3/Fig2_SI.png
@@ -203,7 +264,7 @@ Moreover, the more vigour the vegetation is **OR** the more green biomass is pre
 
 |br|
 
-**Ratio Vegetation Index (RVI)** |br|
+**a. Ratio Vegetation Index (RVI)** |br|
 This is the basic greenness vegetation index and it is effective over a wide range of different conditions. Equation :eq:`eqSI1` shows its simple mathematical formula:
 
 .. math:: RVI=\frac{\rho_{NIR}}{\rho_{Red}}
@@ -220,9 +281,14 @@ Healthy vegetation generally falls between values of 4 to 10.
 
 .. note:: Unfortunately, RVI is not bounded from above. That makes difficult to compare values for different vegetation covers.
 
+.. caution:: The values and thresholds of the spectral index described above are intended as general recommendations. |br|
+	The analyst’s experience can suggest more appropriate values to the specific case study.
+
 |br|
 
-**Normalized Difference Vegetation Index (NDVI)** |br|
+.. _Normalized-Difference-Vegetation-Index:
+
+**b. Normalized Difference Vegetation Index (NDVI)** |br|
 This is the most known and used greenness vegetation index. Equation :eq:`eqSI2` shows its mathematical formula:
 
 .. math:: NDVI=\frac{\rho_{NIR}-\rho_{Red}}{\rho_{NIR}+\rho_{Red}}
@@ -261,16 +327,24 @@ While NDVI is meaningful ONLY for vegetated areas, it can be calculated for all 
 - NDVI **close to 0** is a typical value for clouds (see :numref:`Fig4_signature`),
 - Slightly positive NDVI (**0<NDVI<0.2**) are typical values for bare soil (see :numref:`Fig5_signature`).
 
+.. caution:: The values and thresholds of the spectral index described above are intended as general recommendations. |br|
+	The analyst’s experience can suggest more appropriate values to the specific case study.
+
+|br|
+
 .. hint:: **Small activity** |br|
 	Most satellite-based crop monitoring systems use NDVI (or similar spectral indices) to show farmers which parts of their fields have more stressed vegetation. |br|
 	See `CropSAT <https://cropsat.com/>`_ for a free online demo to highlight where to increase the fertilization rate (suggestion: try the location "Paderno Ponchielli, CR, Italia").
 
 |br|
 
-**Additional spectral indices** |br|
-The list of existing spectral indices is very long, but you could build your own spectral index! All you need is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance. |br|
+**c. Additional spectral indices** |br|
+The list of existing spectral indices is very long. |br|
+The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
 
 For instance, spectral indices can be used to map floodings occurring more frequently due to climate change.
+
+.. _Normalized_Difference_Water_Index1:
 
 The **Normalized Difference Water Index (NDWI)** is built on the effects of water/moisture on the soil’s spectral signature: with the increasing of water, the ratio :math:`\frac{\rho_{Green}}{\rho_{NIR}}` decreases. Equation :eq:`eqSI3` shows its mathematical formula:
 
@@ -280,15 +354,40 @@ The **Normalized Difference Water Index (NDWI)** is built on the effects of wate
 NDWI is a normalized index ranging from -1 to 1, but for **WATER** it has positive values. The larger the ratio, the more “amount of water” is present in the image pixel. |br|
 The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDVI<0.3) from flooded areas (NDWI>0.3).
 
+.. _Normalized_Difference_Water_Index2:
+
 .. warning:: A DIFFERENT spectral index, also called `Normalized Difference Water Index (NDWI) <https://edo.jrc.ec.europa.eu/documents/factsheets/factsheet_ndwi.pdf>`_, (:math:`NDWI=\frac{\rho_{NIR}-\rho_{SWIR}}{\rho_{NIR}+\rho_{SWIR}}`) uses NIR and SWIR spectral bands to detect *water stress in vegetation (e.g. drought)*.
 
-.. caution:: The values and thresholds of the spectral indices described above are intended as general recommendations. |br|
+.. caution:: The values and thresholds of the spectral index described above are intended as general recommendations. |br|
 	The analyst’s experience can suggest more appropriate values to the specific case study.
 
+|br|
 
-.. hint:: **Looking for a specific spectral index?** |br|
-	The `Index DataBase <https://www.indexdatabase.de/>`_ is a collection of spectral indices for different applications and sensors. Here you find a selection of `250 spectral indices designed to fit the images of the Sentinel-2 satellite <https://www.indexdatabase.de/db/is.php?sensor_id=96>`_. |br|
-	If you like to import these spectral indices into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
+Or spectral indices can be used to map glaciers retreat due to climate change.
+
+.. _Normalized_Difference_Snow_Index:
+
+The **Normalized Difference Snow Index (NDSI)** is built on the different SWIR reflectance of snow (low) and clouds (high). Equation :eq:`eqSI4` shows its mathematical formula:
+
+.. math:: NDSI=\frac{\rho_{Green}-\rho_{SWIR}}{\rho_{Green}+\rho_{SWIR}}
+	:label: eqSI4
+
+NDSI is a normalized index ranging from -1 to 1, but for **SNOW** it has positive values. |br|
+The threshold **NDSI=0.4** is often used to differentiate not-snow cover (NDVI<0.4) from snow cover (NDWI>0.4).
+
+.. caution:: The values and thresholds of the spectral index described above are intended as general recommendations. |br|
+	The analyst’s experience can suggest more appropriate values to the specific case study.
+
+|br|
+
+.. hint:: If you like to import the spectral indices of the `Index DataBase <https://www.indexdatabase.de/>`_ into Sentinel Hub EO Browser, try these `javascript <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/indexdb/>`_.
+
+|br|
+
+**d. Build your own spectral index** |br|
+All you need to know is the spectral signature of the standard/unaltered state of the land or object you are monitoring and how the phenomenon you are studying affects its reflectance.
+
+Now you can create an expression with one or more spectral bands that returns a value that is proportional to the phenomenon observed! 
 
 |br|
 |br|
@@ -297,37 +396,6 @@ The threshold **NDWI=0.3** is often used to differentiate non-flooded areas (NDV
 
 Automatic land cover mapping
 -----------------------------
-
-Land cover maps vs land use maps
-`````````````````````````````````
-Land cover maps describe the geospatial information on different **physical coverages of the Earth’s surface.** They also capture the land cover changes over time. |br|
-Example of land cover classes are:
-
-- Farmlands,
-- Glaciers,
-- Urban areas,
-- Forests,
-- Lakes.
-
-*A very efficient method to determine the land cover is analysing satellite images.*
-
-On the other hand, land use maps describe **how people use the land and which activities people do in a specific land cover type.** |br|
-Some examples of land use classes are:
-
-- Recreational,
-- Residential,
-- Commercial,
-- Industrial.
-
-Remote sensing systems can provide information on physical coverages. Thus *land use cannot be determined by analysing satellite images.*:numref:`Fig1_Maps` shows the difference between land cover and land use.
-
-.. _Fig1_Maps:
-.. figure:: /img/3/Fig1_Maps.png
-	:align: center
-
-	Land cover map vs land use map for the city of Toronto, Canada (credit: open data - City of Toronto, ESRI).
-
-|br|
 
 .. _Supervised-image-classification:
 
@@ -349,7 +417,7 @@ For each class, pick some training samples on the satellite image and label them
 Now we want the classification algorithm to **predict** each image pixel’s **UNKNOWN land cover** based on their spectral signature’s **similarity** with the **KNOWN training samples** (see :ref:`How-to-compare-spectral-signatures`). |br|
 The output is a classification map with all the classes defined by the training samples (:numref:`Fig10_signature`).
 
-**In other words, the classification map is a prediction based on the knowledge of some limited training sites.**
+.. note:: **In other words, the classification map is a prediction based on the knowledge of some limited training sites.**
 
 .. _Fig10_signature:
 .. figure:: /img/3/Fig10_signature.png
@@ -357,7 +425,8 @@ The output is a classification map with all the classes defined by the training 
 
 	Prediction of the land cover.
 
-.. note:: **How many training samples?** |br|
+.. tip:: **How many training samples?** |br|
+
 	Unfortunately, different classification techniques require a different number of (optimal) training samples! |br|
 	**SUGGESTION: a starting point for multispectral images like Sentinel-2 or Landsat could be about 200 image pixels for each class.**
 
@@ -407,9 +476,11 @@ Thus, the Spectral Angle Mapper classifier labels the image pixels based their "
 
 	<iframe width="100%" height="500px" src="https://rdrr.io/snippets/embed/?code=%23%23%20Load%20libraries%0Alibrary(RStoolbox)%0Alibrary(raster)%0Alibrary(ggplot2)%0A%0A%23%23%20Load%20test%20image%0Adata(lsat)%20%0A%0A%23%23%20Collect%20training%20samples%20%0A%23%23%20First%20location%20is%20water%2C%20second%20is%20open%20agricultural%20vegetation%0Apts%20%3C-%20data.frame(x%20%3D%20c(624720%2C%20627480)%2C%20y%20%3D%20c(-414690%2C%20-411090))%0Atraining_samples%20%3C-%20extract(lsat%2C%20pts)%0Arownames(training_samples)%20%3C-%20c(%22water%22%2C%20%22vegetation%22)%0A%0A%23%23%20Calculate%20spectral%20angles%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20TRUE)%0A%0A%23%23%20Plot%20spectral%20angles%20(spectral%20signatures'%20similarity)%0Aplot(lsat_sam)%0A%0A%23%23%20Classify%20based%20on%20minimum%20angle%0Alsat_sam%20%3C-%20sam(lsat%2C%20training_samples%2C%20angles%20%3D%20FALSE)%0A%0A%23%23%20Show%20classification%20map%0AggR(lsat_sam%2C%20forceCat%20%3D%20TRUE%2C%20geom_raster%3DTRUE)%20%2B%20%0A%20%20%20%20%20%20%20%20scale_fill_manual(values%20%3D%20c(%22blue%22%2C%20%22green%22)%2C%20labels%20%3D%20c(%22water%22%2C%20%22vegetation%22))%0A%0A%23%23%20Show%20test%20image%0AggRGB(lsat%2C%20stretch%20%3D%20%22lin%22)" frameborder="0"></iframe>
 
+.. tip:: Let's try including a new forset class using as training sample the image pixel with coordinates **x = 620000, y = -415000.** What happens?
+
 |br|
 
-.. tip:: Let's try including a new forset class using as training sample the image pixel with coordinates **x = 620000, y = -415000.** What happens?
+.. seealso:: For additional information on the RStoolbox library, see `Tools for Remote Sensing Data Analysis in R <https://bleutner.github.io/RStoolbox/rstbx-docu/sam.html>`_.
 
 |br|
 |br|
@@ -483,6 +554,7 @@ Overall, the confusion matrix has **434 testing samples.**
 	Confusion matrix. Number of misclassified testing samples.
 
 .. note:: **What are the testing samples?** |br|
+
 	To evaluate the map’s accuracy, we must compare predicted land cover classes with actual land cover classes. This is done using the testing samples, which are image pixels randomly collected, but those actual land cover is KNOWN. Results are then extended from the testing samples to the full map.
 
 	**GUIDELINE: testing samples must be randomly collected for ALL land cover classes. There should be no less than 50 testing samples for each land cover class.**
@@ -557,12 +629,17 @@ Typically, user’s and producer’s accuracy for a given land cover class are d
 
 .. note:: The user's accuracy is an indicator of how well the map describes the actual land covers.
 
+|br|
+
 .. hint:: **Small activity** |br|
 	Which is the accuracy of your map? |br|
 	Calculate the overall accuracy and the per-class producer’s accuracy and user’s accuracy of your own map. Try the free `Confusion matrix online calculator <http://www.marcovanetti.com/pages/cfmatrix/>`_.
 
+|br|
+
 .. seealso:: For additional information, see the practical guide on `Map Accuracy Assessment and Area Estimation <http://www.fao.org/3/i5601e/i5601e.pdf>`_ of `FAO <http://www.fao.org/home/en/>`_.
 
 |br|
+|br|
 
-(v.17.03.20-16.36)
+(v.2103211807)
