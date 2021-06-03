@@ -3,6 +3,8 @@
 Credits
 =======
 
+`QGIS.org <http://qgis.org/>`_, 2021. QGIS Geographic Information System. QGIS Association. http://www.qgis.org
+
 Content of the course
 ---------------------
 
