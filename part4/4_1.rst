@@ -1,7 +1,7 @@
 Copernicus EMS and crisis maps production
 =========================================
 
-Copernicus EMS on demand mapping
+Copernicus EMS
 --------------------------------
 
 Copernicus Emergency Management Service (EMS) is part of the huge Copernicus programme (https://www.copernicus.eu/), which is dedicated to mapping, early warning and monitoring of emergencies and which has already been introduced in :ref:`3.1.4.6 <Copernicus-Emergency-Management-Service>`. In this chapter, we are going to discuss the different components of the service (:numref:`4.1.1.1`), as well as which are the technologies and the methods which allow to obtain maps that can support emergency management.
